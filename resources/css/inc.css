@@ -1,0 +1,146 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+	font-family: SairaThin;
+	font-weigth: 100;
+	src: url(../fonts/SairaCondensed-Thin.ttf);
+}
+
+@font-face {
+	font-family: SairaExtraL;
+	font-weigth: 200;
+	src: url(../fonts/SairaCondensed-ExtraLight.ttf);
+}
+
+@font-face {
+	font-family: SairaLight;
+	font-weigth: 300;
+	src: url(../fonts/SairaCondensed-Light.ttf);
+}
+
+@font-face {
+	font-family: SairaRegular;
+	font-weight: 400;
+	src: url(../fonts/SairaCondensed-Regular.ttf);
+}
+
+@font-face {
+	font-family: SairaMedium;
+	font-weight: 500;
+	src: url(../fonts/SairaCondensed-Medium.ttf);
+}
+
+@font-face {
+	font-family: SairaSemiB;
+	font-weigth: 600;
+	src: url(../fonts/SairaCondensed-SemiBold.ttf);
+}
+
+@font-face {
+	font-family: SairaBold;
+	font-weight: 700;
+	src: url(../fonts/SairaCondensed-Bold.ttf);
+}
+
+@font-face {
+	font-family: SairaExtraB;
+	font-weigth: 800;
+	src: url(../fonts/SairaCondensed-ExtraBold.ttf);
+}
+
+@font-face {
+	font-family: SairaBlack;
+	font-weigth: 900;
+	src: url(../fonts/SairaCondensed-Black.ttf);
+}
+
+* {
+	font-family: "SairaMedium";
+}
+
+.card {
+	width: 250px;
+	@apply shadow-lg bg-gray-100 h-auto rounded-lg;
+}
+
+.card-img {
+	height: 200px;
+	width: 100%;
+	border-radius: 0.5rem 0.5rem 0 0;
+	object-fit: contain;
+	@apply bg-gray-300;
+}
+
+.card-state {
+	@apply font-bold text-center z-20 relative bg-green-600 text-white w-max;
+	top: -195px;
+	border-radius: 0.2em;
+	left: 5px;
+	padding: 0.2em 0.4em;
+	transition: left 1s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.card:hover .card-state {
+	left: 185px;
+	@apply shadow-lg;
+}
+
+.card-price {
+	@apply text-center relative z-20 font-medium bg-white w-max;
+	top: -40px;
+	left: 5px;
+	border-radius: 0.2em;
+	padding: 0.2em 0.4em;
+	transition: top 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.card:hover .card-price {
+	top: -50px;
+	@apply shadow-lg;
+}
+
+.card-content {
+	position: relative;
+	top: -40px;
+}
+
+.swiper-container {
+	width: 100%;
+	height: 400px;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+	@apply text-2xl text-gray-700 !important;
+}
+
+.text-shadow {
+	text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.border-btn {
+	border: 0.1em solid #000;
+}
+
+.img-gallery {
+	@apply bg-gray-400 w-full my-8;
+	height: min-content;
+}
+
+.icon-info {
+	@apply relative;
+	top: 35px;
+	left: -40px;
+	font-size: 1.3em;
+}
+
+.card-car-shop {
+	@apply grid bg-gray-400;
+	height: 200px;
+}
+
+.card-car-shop div > img {
+	height: 200px;
+}
