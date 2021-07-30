@@ -55,7 +55,7 @@ class LoginController extends Controller
         $this->_registerOrLoginUser($user);
 
         // Return home after login
-        return redirect()->route('home');
+        return redirect()->route('admin');
     }
     protected function _registerOrLoginUser($data)
     {
@@ -86,6 +86,6 @@ class LoginController extends Controller
         $this->_registerOrLoginUser($user);
 
         // Return home after login
-        return redirect()->route('home');
+        return redirect()->route('admin');
     }
 }
