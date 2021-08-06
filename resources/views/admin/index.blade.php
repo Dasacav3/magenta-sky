@@ -1,4 +1,4 @@
-@extends('adminlte::page')
+{{-- @extends('adminlte::page')
 
 @section('title', 'Dashboard')
 
@@ -16,4 +16,10 @@
 
 @section('js')
     <script> console.log('Hi!'); </script>
-@stop
+@stop --}}
+
+@includeIf('admin.head', ['title' => 'Dashboard'])
+
+@includeIf('admin.navbar')
+
+@includeIf('admin.footer')
