@@ -14,3 +14,4 @@ Magenta Sky Store es el prototipo de tienda online creado a partir de la necesid
 - UI v3^
 - Tailwind CSS v2^
 - SwiperJS v6.8^
+- Datatables v1.10.25^
