@@ -1,4 +1,4 @@
-@includeIf('admin.head', ['title' => 'Dashboard'])
+@includeIf('admin.head', ['title' => 'Perfil'])
 
 @includeIf('admin.navbar')
 
