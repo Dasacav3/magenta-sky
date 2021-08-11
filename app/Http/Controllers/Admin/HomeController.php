@@ -4,34 +4,63 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
-    public function index(){
-        return view('admin.index');
+    public function index()
+    {
+        if (Auth::user()->rol == "admin") {
+            return view('admin.index');
+        }
+        return redirect()->route('panel');
     }
 
-    public function customers(){
-        return view('admin.customers');
+    public function customers()
+    {
+        if (Auth::user()->rol == "admin") {
+            return view('admin.customers');
+        }
+        return redirect()->route('panel');
     }
 
-    public function products(){
-        return view('admin.products');
+    public function products()
+    {
+        if (Auth::user()->rol == "admin") {
+            return view('admin.products');
+        }
+        return redirect()->route('panel');
     }
 
-    public function sales(){
-        return view('admin.sales');
+    public function sales()
+    {
+        if (Auth::user()->rol == "admin") {
+            return view('admin.sales');
+        }
+        return redirect()->route('panel');
     }
 
-    public function orders(){
-        return view('admin.orders');
+    public function orders()
+    {
+        if (Auth::user()->rol == "admin") {
+            return view('admin.orders');
+        }
+        return redirect()->route('panel');
     }
 
-    public function statistics(){
-        return view('admin.statistics');
+    public function statistics()
+    {
+        if (Auth::user()->rol == "admin") {
+            return view('admin.statistics');
+        }
+        return redirect()->route('panel');
     }
 
-    public function profile(){
-        return view('admin.profile');
+    public function profile()
+    {
+        if (Auth::user()->rol == "admin") {
+            return view('admin.profile');
+        }
+        return redirect()->route('panel');
     }
 }

@@ -41,6 +41,14 @@ class LoginController extends Controller
         $this->middleware('guest')->except('logout');
     }
 
+    public function redirectPath()
+    {
+        if (Auth::user()->rol == "admin") {
+            return '/admin';
+        }
+        return '/panel';
+    }
+
     // Google login
     public function redirectToGoogle()
     {
@@ -54,8 +62,11 @@ class LoginController extends Controller
 
         $this->_registerOrLoginUser($user);
 
-        // Return home after login
-        return redirect()->route('admin');
+        if(Auth::user()->rol == 'admin'){
+            // Return home after login
+            return redirect()->route('admin');
+        }
+        return redirect()->route('panel');
     }
     protected function _registerOrLoginUser($data)
     {
