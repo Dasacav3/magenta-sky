@@ -16,8 +16,6 @@
                     Clientes</a></li>
             <li class="py-1 md:py-3"><a class="font-sairaSemiBold" href="/admin/productos"><i class="fas fa-store"></i>
                     Productos</a></li>
-            <li class="py-1 md:py-3"><a class="font-sairaSemiBold" href="/admin/ventas"><i
-                        class="fas fa-shopping-cart"></i> Ventas</a></li>
             <li class="py-1 md:py-3"><a class="font-sairaSemiBold" href="/admin/pedidos"><i class="fas fa-truck"></i>
                     Pedidos</a></li>
             <li class="py-1 md:py-3"><a class="font-sairaSemiBold" href="/admin/estadisticas"><i

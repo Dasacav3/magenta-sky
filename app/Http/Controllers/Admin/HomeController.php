@@ -32,14 +32,6 @@ class HomeController extends Controller
         return redirect()->route('panel');
     }
 
-    public function sales()
-    {
-        if (Auth::user()->rol == "admin") {
-            return view('admin.sales');
-        }
-        return redirect()->route('panel');
-    }
-
     public function orders()
     {
         if (Auth::user()->rol == "admin") {

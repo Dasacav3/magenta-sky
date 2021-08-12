@@ -10,8 +10,6 @@ Route::get('/clientes', [HomeController::class, 'customers']);
 
 Route::get('/productos', [HomeController::class, 'products']);
 
-Route::get('/ventas', [HomeController::class, 'sales']);
-
 Route::get('/pedidos', [HomeController::class, 'orders']);
 
 Route::get('/estadisticas', [HomeController::class, 'statistics']);
