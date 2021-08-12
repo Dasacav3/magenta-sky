@@ -17,7 +17,7 @@
             <th>APELLIDO</th>
             <th>CELULAR</th>
             <th>CIUDAD</th>
-            <th>DIRECCIÓN</th>
+            <th>EDICIÓN</th>
         </thead>
         <tbody>
             <tr>
@@ -37,7 +37,7 @@
             <th>APELLIDO</th>
             <th>CELULAR</th>
             <th>CIUDAD</th>
-            <th>DIRECCIÓN</th>
+            <th>EDICIÓN</th>
         </tfoot>
     </table>
 </div>
