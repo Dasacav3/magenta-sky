@@ -23,12 +23,14 @@ window.addEventListener("DOMContentLoaded", () => {
     let btnAdminMenuOpen = document.getElementById("btn-admin-menu-open");
     let btnAdminMenuClose = document.getElementById("btn-admin-menu-close");
     let adminHeader = document.getElementById("admin-header");
+    let adminAside = document.getElementById("admin-menu");
     if (btnAdminMenuOpen) {
         btnAdminMenuOpen.addEventListener("click", () => {
             let adMenu = document.getElementById("admin-menu");
             adMenu.classList.toggle("hidden");
             btnAdminMenuClose.classList.toggle("hidden");
             adminHeader.classList.toggle("hidden");
+            adminAside.classList.toggle("overflow-hidden");
         });
     }
     if (btnAdminMenuClose) {
@@ -37,6 +39,7 @@ window.addEventListener("DOMContentLoaded", () => {
             adMenu.classList.toggle("hidden");
             btnAdminMenuClose.classList.toggle("hidden");
             adminHeader.classList.toggle("hidden");
+            adminAside.classList.toggle("overflow-hidden");
         });
     }
 });
