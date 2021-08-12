@@ -6,7 +6,7 @@
     class="md:row-start-2 col-span-3 md:col-start-2 md:col-end-7 flex justify-center flex-col align-items-center p-3 lg:p-8 text-center">
     <div>
         <h2 class="text-3xl font-sairaBold pb-8 uppercase text-shadow">Productos</h2>
-        <button class="text-white bg-gray-700 rounded-lg px-3 py-1 text-shadow mb-4"><i class="fas fa-plus"></i>
+        <button id="btnModalAdd" class="text-white bg-gray-700 rounded-lg px-3 py-1 text-shadow mb-4"><i class="fas fa-plus"></i>
             Añadir</button>
     </div>
     <table id="example">
@@ -54,5 +54,7 @@
         });
     });
 </script>
+
+<script src="/js/products.js"></script>
 
 @includeIf('admin.footer')
