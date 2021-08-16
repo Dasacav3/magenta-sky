@@ -3,144 +3,243 @@
 @tailwind utilities;
 
 @font-face {
-	font-family: SairaThin;
-	font-weigth: 100;
-	src: url(../fonts/SairaCondensed-Thin.ttf);
+    font-family: SairaThin;
+    font-weigth: 100;
+    src: url(../fonts/SairaCondensed-Thin.ttf);
 }
 
 @font-face {
-	font-family: SairaExtraL;
-	font-weigth: 200;
-	src: url(../fonts/SairaCondensed-ExtraLight.ttf);
+    font-family: SairaExtraL;
+    font-weigth: 200;
+    src: url(../fonts/SairaCondensed-ExtraLight.ttf);
 }
 
 @font-face {
-	font-family: SairaLight;
-	font-weigth: 300;
-	src: url(../fonts/SairaCondensed-Light.ttf);
+    font-family: SairaLight;
+    font-weigth: 300;
+    src: url(../fonts/SairaCondensed-Light.ttf);
 }
 
 @font-face {
-	font-family: SairaRegular;
-	font-weight: 400;
-	src: url(../fonts/SairaCondensed-Regular.ttf);
+    font-family: SairaRegular;
+    font-weight: 400;
+    src: url(../fonts/SairaCondensed-Regular.ttf);
 }
 
 @font-face {
-	font-family: SairaMedium;
-	font-weight: 500;
-	src: url(../fonts/SairaCondensed-Medium.ttf);
+    font-family: SairaMedium;
+    font-weight: 500;
+    src: url(../fonts/SairaCondensed-Medium.ttf);
 }
 
 @font-face {
-	font-family: SairaSemiB;
-	font-weigth: 600;
-	src: url(../fonts/SairaCondensed-SemiBold.ttf);
+    font-family: SairaSemiB;
+    font-weigth: 600;
+    src: url(../fonts/SairaCondensed-SemiBold.ttf);
 }
 
 @font-face {
-	font-family: SairaBold;
-	font-weight: 700;
-	src: url(../fonts/SairaCondensed-Bold.ttf);
+    font-family: SairaBold;
+    font-weight: 700;
+    src: url(../fonts/SairaCondensed-Bold.ttf);
 }
 
 @font-face {
-	font-family: SairaExtraB;
-	font-weigth: 800;
-	src: url(../fonts/SairaCondensed-ExtraBold.ttf);
+    font-family: SairaExtraB;
+    font-weigth: 800;
+    src: url(../fonts/SairaCondensed-ExtraBold.ttf);
 }
 
 @font-face {
-	font-family: SairaBlack;
-	font-weigth: 900;
-	src: url(../fonts/SairaCondensed-Black.ttf);
+    font-family: SairaBlack;
+    font-weigth: 900;
+    src: url(../fonts/SairaCondensed-Black.ttf);
 }
 
 * {
-	font-family: "SairaMedium";
+    font-family: "SairaMedium";
 }
 
 .card {
-	width: 250px;
-	@apply shadow-lg bg-gray-100 h-auto rounded-lg;
+    width: 250px;
+    @apply shadow-lg bg-gray-100 h-auto rounded-lg;
 }
 
 .card-img {
-	height: 200px;
-	width: 100%;
-	border-radius: 0.5rem 0.5rem 0 0;
-	object-fit: contain;
-	@apply bg-gray-300;
+    height: 200px;
+    width: 100%;
+    border-radius: 0.5rem 0.5rem 0 0;
+    object-fit: contain;
+    @apply bg-gray-300;
 }
 
 .card-state {
-	@apply font-bold text-center z-20 relative bg-green-600 text-white w-max;
-	top: -195px;
-	border-radius: 0.2em;
-	left: 5px;
-	padding: 0.2em 0.4em;
-	transition: left 1s cubic-bezier(0.165, 0.84, 0.44, 1);
+    @apply font-bold text-center z-20 relative bg-green-600 text-white w-max;
+    top: -195px;
+    border-radius: 0.2em;
+    left: 5px;
+    padding: 0.2em 0.4em;
+    transition: left 1s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
 .card:hover .card-state {
-	left: 185px;
-	@apply shadow-lg;
+    left: 185px;
+    @apply shadow-lg;
 }
 
 .card-price {
-	@apply text-center relative z-20 font-medium bg-white w-max;
-	top: -40px;
-	left: 5px;
-	border-radius: 0.2em;
-	padding: 0.2em 0.4em;
-	transition: top 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+    @apply text-center relative z-20 font-medium bg-white w-max;
+    top: -40px;
+    left: 5px;
+    border-radius: 0.2em;
+    padding: 0.2em 0.4em;
+    transition: top 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
 .card:hover .card-price {
-	top: -50px;
-	@apply shadow-lg;
+    top: -50px;
+    @apply shadow-lg;
 }
 
 .card-content {
-	position: relative;
-	top: -40px;
+    position: relative;
+    top: -40px;
 }
 
 .swiper-container {
-	width: 100%;
-	height: 400px;
+    width: 100%;
+    height: 400px;
 }
 
 .swiper-button-next,
 .swiper-button-prev {
-	@apply text-2xl text-gray-700 !important;
+    @apply text-2xl text-gray-700 !important;
 }
 
 .text-shadow {
-	text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 .border-btn {
-	border: 0.1em solid #000;
+    border: 0.1em solid #000;
 }
 
 .img-gallery {
-	@apply bg-gray-400 w-full my-8;
-	height: min-content;
+    @apply bg-gray-400 w-full my-8;
+    height: min-content;
 }
 
 .icon-info {
-	@apply relative;
-	top: 35px;
-	left: -40px;
-	font-size: 1.3em;
+    @apply relative;
+    top: 35px;
+    left: -40px;
+    font-size: 1.3em;
 }
 
 .card-car-shop {
-	@apply grid bg-gray-400;
-	height: 200px;
+    @apply grid bg-gray-400;
+    height: 200px;
 }
 
 .card-car-shop div > img {
-	height: 200px;
+    height: 200px;
+}
+
+@import url("colors_fonts.css");
+@import url("datatable.css");
+
+/* Formulario de añadir reserva */
+
+.form-modal {
+    font-size: 16px;
+}
+
+.form-modal > form {
+    width: 700px;
+}
+
+.form-modal > form > .form-title {
+    margin: 1.5em 0;
+    text-align: center;
+}
+
+.form-modal .form-fields {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.form-modal > form input,
+.form-modal > form select,
+.form-modal > form select option {
+    width: 250px;
+    height: 2em;
+    border-radius: 5px;
+}
+
+.form-modal > form input[type="button"] {
+    margin-top: 1em;
+    font-weight: bold;
+}
+
+.modal-contenido {
+    width: 300px;
+    padding: 10px 20px;
+    margin: 20% auto;
+    position: relative;
+    box-shadow: -8px 9px 48px 9px rgba(0, 0, 0, 0.69);
+}
+
+.pop-up {
+    background: rgba(48, 48, 48, 0.5);
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+}
+
+.pop-up-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+    max-width: 950px;
+    transform: scale(0.6);
+    opacity: 0;
+    transition: 0.3s ease all;
+    width: 300px;
+    padding: 10px 20px;
+    margin: 20% auto;
+    position: relative;
+    box-shadow: -8px 9px 48px 9px rgba(77, 72, 72, 0.69);
+}
+
+.closePopup {
+    font-size: 1.5em;
+    padding: 1px 4px;
+}
+
+.pop-up.show {
+    visibility: visible;
+}
+
+.pop-up-wrap.show {
+    transform: scale(1);
+    opacity: 1;
+}
+
+@media screen and (max-width: 699px) {
+    .form-modal > form {
+        width: 300px;
+    }
+
+    .form-modal .form-fields {
+        flex-direction: column;
+    }
 }

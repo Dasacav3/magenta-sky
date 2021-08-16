@@ -32454,6 +32454,106 @@ video {
   height: 200px;
 }
 
+@import url("colors_fonts.css");
+
+@import url("datatable.css");
+
+/* Formulario de añadir reserva */
+
+.form-modal {
+  font-size: 16px;
+}
+
+.form-modal > form {
+  width: 700px;
+}
+
+.form-modal > form > .form-title {
+  margin: 1.5em 0;
+  text-align: center;
+}
+
+.form-modal .form-fields {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.form-modal > form input,
+.form-modal > form select,
+.form-modal > form select option {
+  width: 250px;
+  height: 2em;
+  border-radius: 5px;
+}
+
+.form-modal > form input[type="button"] {
+  margin-top: 1em;
+  font-weight: bold;
+}
+
+.modal-contenido {
+  width: 300px;
+  padding: 10px 20px;
+  margin: 20% auto;
+  position: relative;
+  box-shadow: -8px 9px 48px 9px rgba(0, 0, 0, 0.69);
+}
+
+.pop-up {
+  background: rgba(48, 48, 48, 0.5);
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  visibility: hidden;
+}
+
+.pop-up-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 90%;
+  max-width: 950px;
+  transform: scale(0.6);
+  opacity: 0;
+  transition: 0.3s ease all;
+  width: 300px;
+  padding: 10px 20px;
+  margin: 20% auto;
+  position: relative;
+  box-shadow: -8px 9px 48px 9px rgba(77, 72, 72, 0.69);
+}
+
+.closePopup {
+  font-size: 1.5em;
+  padding: 1px 4px;
+}
+
+.pop-up.show {
+  visibility: visible;
+}
+
+.pop-up-wrap.show {
+  transform: scale(1);
+  opacity: 1;
+}
+
+@media screen and (max-width: 699px) {
+  .form-modal > form {
+    width: 300px;
+  }
+
+  .form-modal .form-fields {
+    flex-direction: column;
+  }
+}
+
 @media (min-width: 640px) {
   .sm\:container {
     width: 100%;
