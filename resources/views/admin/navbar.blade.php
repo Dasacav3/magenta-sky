@@ -9,7 +9,7 @@
             Sky
         </h1>
         <ul
-            class="flex justify-center flex-col md:initial md:self-start ml-2 lg:ml-10 text-lg lg:text-xl leading-loose text-gray-800">
+            class="flex justify-center flex-col md:initial md:self-start ml-2 lg:ml-10 text-lg lg:text-xl leading-loose text-gray-700">
             <li class="py-1 md:py-3"><a class="font-sairaSemiBold" href="/admin"><i class="fas fa-tachometer-alt"></i>
                     Dashboard</a></li>
             <li class="py-1 md:py-3"><a class="font-sairaSemiBold" href="/admin/clientes"><i class="fas fa-users"></i>
@@ -25,7 +25,7 @@
         </ul>
     </aside>
     <header id="admin-header"
-        class="flex justify-between px-2 md:px-8 items-center col-span-3 md:col-span-5 bg-red-300 h-16 text-lg shadow-inner row-span-1 text-gray-800">
+        class="flex justify-between px-2 md:px-8 items-center col-span-3 md:col-span-5 bg-red-300 h-16 text-lg shadow-inner row-span-1 text-gray-700">
         <div class="flex items-center w-full justify-between md:justify-end">
             <div class="block md:hidden mr-5" id="btn-admin-menu-open"><i class="fas fa-bars"></i></div>
             <div class="flex items-center">
