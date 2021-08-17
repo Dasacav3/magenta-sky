@@ -59,7 +59,8 @@
     <div x-data="{ showModal : false }">
         <!-- Button -->
         <button @click="showModal = !showModal"
-            class="text-white bg-gray-700 rounded-lg px-3 py-1 text-shadow mb-4 transition-colors duration-150 ease-linear"><i class="fas fa-credit-card"></i>
+            class="text-white bg-gray-700 rounded-lg px-3 py-1 text-shadow mb-4 transition-colors duration-150 ease-linear"><i
+                class="fas fa-credit-card"></i>
             Metodos de pago</button>
 
         <!-- Modal Background -->
@@ -90,36 +91,34 @@
             </div>
         </div>
     </div>
-</div>
-</div>
-<table id="example">
-    <thead class="bg-gray-700 text-white">
-        <th>ID</th>
-        <th>CLIENTE</th>
-        <th>CIUDAD</th>
-        <th>FECHA</th>
-        <th>ESTADO</th>
-        <th>EDICIÓN</th>
-    </thead>
-    <tbody>
-        <tr>
-            <td>F</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
-    </tbody>
-    <tfoot class="bg-gray-700 text-white">
-        <th>ID</th>
-        <th>CLIENTE</th>
-        <th>CIUDAD</th>
-        <th>FECHA</th>
-        <th>ESTADO</th>
-        <th>EDICIÓN</th>
-    </tfoot>
-</table>
+    <table id="example">
+        <thead class="bg-gray-700 text-white">
+            <th>ID</th>
+            <th>CLIENTE</th>
+            <th>CIUDAD</th>
+            <th>FECHA</th>
+            <th>ESTADO</th>
+            <th>EDICIÓN</th>
+        </thead>
+        <tbody>
+            <tr>
+                <td>F</td>
+                <td>A</td>
+                <td>C</td>
+                <td>E</td>
+                <td>A</td>
+                <td>C</td>
+            </tr>
+        </tbody>
+        <tfoot class="bg-gray-700 text-white">
+            <th>ID</th>
+            <th>CLIENTE</th>
+            <th>CIUDAD</th>
+            <th>FECHA</th>
+            <th>ESTADO</th>
+            <th>EDICIÓN</th>
+        </tfoot>
+    </table>
 </div>
 
 </div>

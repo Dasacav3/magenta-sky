@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -19,7 +20,8 @@ class HomeController extends Controller
     public function customers()
     {
         if (Auth::user()->rol == "admin") {
-            return view('admin.customers');
+            $datos['users']=User::paginate(5);
+            return view('admin.customers', $datos);
         }
         return redirect()->route('panel');
     }

@@ -26,6 +26,8 @@
     <link rel="stylesheet" href="/lib/sweetalert2/dist/sweetalert2.min.css">
     {{-- Alpine.js --}}
     <script defer src="https://unpkg.com/alpinejs@3.2.3/dist/cdn.min.js"></script>
+    {{-- ChartJS --}}
+    <script src="/lib/chartjs/dist/chart.min.js"></script>
 
 
     <title>{{ $title }}</title>

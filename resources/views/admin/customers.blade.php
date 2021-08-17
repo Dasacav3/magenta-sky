@@ -7,32 +7,34 @@
     <div>
         <h2 class="text-3xl font-sairaBold pb-8 uppercase text-shadow">Clientes</h2>
     </div>
-    <table id="example">
+    <table id="datatable">
         <thead class="bg-gray-700 text-white">
             <th>ID</th>
             <th>EMAIL</th>
             <th>NOMBRE</th>
-            <th>APELLIDO</th>
+            <th>IMAGEN</th>
             <th>CELULAR</th>
             <th>CIUDAD</th>
             <th>EDICIÓN</th>
         </thead>
         <tbody>
-            <tr>
-                <td>F</td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
+            @foreach ($users as $user)
+                <tr>
+                    <td>{{$user->id}}</td>
+                    <td>{{$user->email}}</td>
+                    <td>{{$user->name}}</td>
+                    <td><img src="{{$user->avatar}}" alt=""></td>
+                    <td>{{$user->email_verified_at}}</td>
+                    <td>{{$user->email_verified_at}}</td>
+                    <td>{{$user->email_verified_at}}</td>
+                </tr>
+            @endforeach
         </tbody>
         <tfoot class="bg-gray-700 text-white">
             <th>ID</th>
             <th>EMAIL</th>
             <th>NOMBRE</th>
-            <th>APELLIDO</th>
+            <th>IMAGEN</th>
             <th>CELULAR</th>
             <th>CIUDAD</th>
             <th>EDICIÓN</th>
@@ -44,7 +46,7 @@
 
 <script>
     $(document).ready(function() {
-        $('#example').DataTable({
+        $('#datatable').DataTable({
             "responsive": true,
             "language": {
                 "url": "https://cdn.datatables.net/plug-ins/1.10.25/i18n/Spanish.json"
