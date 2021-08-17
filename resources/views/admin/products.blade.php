@@ -34,26 +34,29 @@
                     <form method="POST" class="flex justify-center flex-col">
                         <label>Nombre producto</label>
                         <input type="text" class="border border-black">
-                        <label>Producto SKU</label>
+                        <label>SKU</label>
                         <input type="text" class="border border-black">
                         <label>Precio</label>
                         <input type="number" class="border border-black">
                         <label>Stock</label>
                         <input type="number" class="border border-black">
-                        <label>Producto SKU</label>
+                        <label>Cantidad</label>
                         <input type="text" class="border border-black">
                         <label>Descripción corta</label>
-                        <textarea class="border border-black resize-none" rows="3" cols="10"></textarea>
-                        <label>Descripción tarjeta</label>
                         <textarea class="border border-black resize-none" rows="3" cols="10"></textarea>
                         <label>Descripción larga</label>
                         <textarea class="border border-black resize-none" rows="10" cols="10"></textarea>
                         <label>Categorias</label>
+                        <div id="categorias" class="flex">
+                            <label class="pr-2"><input type="checkbox" id="hombre" value="hombre"> Hombre</label><br>
+                            <label class="pr-2"><input type="checkbox" id="mujer" value="mujer"> Mujer</label><br>
+                            <label class="pr-2"><input type="checkbox" id="accesorio" value="accesorio">
+                                Accesorios</label><br>
+                        </div>
                         <input type="text" class="border border-black" placeholder="Escribe para añadir una categoria">
                         <button class="bg-red-400 text-white w-max px-3 self-center my-3">Añadir categoria</button>
-                        <textarea class="border border-black resize-none" rows="10" cols="25" readonly></textarea>
                         <label>Imagen</label>
-                        <input type="file" class="border border-black">
+                        <input type="file" name="foto_producto" class="border border-black">
                     </form>
 
                     <!-- Buttons -->

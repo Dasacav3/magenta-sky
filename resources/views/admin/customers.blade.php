@@ -25,9 +25,9 @@
                         <td>{{ $user->email }}</td>
                         <td>{{ $user->name }}</td>
                         <td class="flex justify-center"><img src="{{ $user->avatar }}" alt="Foto de perfil" class="rounded-full" width="80px"></td>
-                        <td>{{ $user->email_verified_at }}</td>
-                        <td>{{ $user->email_verified_at }}</td>
-                        <td>{{ $user->email_verified_at }}</td>
+                        <td>{{ $user->telefonoCliente }}</td>
+                        <td>{{ $user->ciudad }}</td>
+                        <td><button><i class="fas fa-edit"></i></button></td>
                     </tr>
                 @endif
             @endforeach
