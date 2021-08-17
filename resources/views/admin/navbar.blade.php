@@ -1,6 +1,6 @@
 <div class="grid grid-cols-3 md:grid-cols-6 auto-rows-min">
     <aside id="admin-menu"
-        class="absolute z-10 md:static flex justify-center flex-col h-screen w-screen md:w-full bg-red-300 items-center h-screen md:col-span-1 hidden md:block shadow-inner row-span-3">
+        class="absolute z-10 md:static flex justify-center flex-col h-full min-h-screen w-screen md:w-full bg-red-300 items-center md:col-span-1 hidden md:block shadow-inner row-span-3">
         <div class="hidden text-white border-4 border-solid px-3 rounded-full" id="btn-admin-menu-close"><i
                 class="fas fa-times"></i></div>
         <h1

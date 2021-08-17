@@ -68,7 +68,7 @@
 
             <div class="flex items-center w-full mb-8 ml-2">
                 <input class="mr-3" type="checkbox" name="tyc" id="tyc"
-                    {{ old('tyc') ? 'checked' : '' }}>
+                    {{ old('tyc') ? 'checked' : '' }} required>
                 <label class="flex" for="tyc">
                     Acepto los terminos y condiciones
                 </label>
