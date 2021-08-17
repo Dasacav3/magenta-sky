@@ -20,7 +20,7 @@ class HomeController extends Controller
     public function customers()
     {
         if (Auth::user()->rol == "admin") {
-            $datos['users']=User::paginate(5);
+            $datos['users'] = User::paginate(1000);
             return view('admin.customers', $datos);
         }
         return redirect()->route('panel');

@@ -19,15 +19,17 @@
         </thead>
         <tbody>
             @foreach ($users as $user)
-                <tr>
-                    <td>{{$user->id}}</td>
-                    <td>{{$user->email}}</td>
-                    <td>{{$user->name}}</td>
-                    <td><img src="{{$user->avatar}}" alt=""></td>
-                    <td>{{$user->email_verified_at}}</td>
-                    <td>{{$user->email_verified_at}}</td>
-                    <td>{{$user->email_verified_at}}</td>
-                </tr>
+                @if ($user->rol == 'customer')
+                    <tr>
+                        <td>{{ $user->id }}</td>
+                        <td>{{ $user->email }}</td>
+                        <td>{{ $user->name }}</td>
+                        <td class="flex justify-center"><img src="{{ $user->avatar }}" alt="Foto de perfil" class="rounded-full" width="80px"></td>
+                        <td>{{ $user->email_verified_at }}</td>
+                        <td>{{ $user->email_verified_at }}</td>
+                        <td>{{ $user->email_verified_at }}</td>
+                    </tr>
+                @endif
             @endforeach
         </tbody>
         <tfoot class="bg-gray-700 text-white">

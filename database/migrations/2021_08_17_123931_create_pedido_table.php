@@ -23,7 +23,7 @@ class CreatePedidoTable extends Migration
             $table->integer('idMetodo_pago');
             $table->integer('idZonas_envio');
             $table->integer('idProducto');
-            $table->foreign('idCliente')->references('id')->on('cliente');
+            $table->foreign('idCliente')->references('id')->on('users');
             $table->foreign('idMetodo_pago')->references('id')->on('metodo_pago');
             $table->foreign('idZonas_envio')->references('id')->on('zonas_envio');
             $table->foreign('idProducto')->references('id')->on('producto');
