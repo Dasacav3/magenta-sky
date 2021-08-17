@@ -18,6 +18,8 @@ class CreateProductoTable extends Migration
             $table->string('nombre', 100);
             $table->string('sku', 100);
             $table->float('precio');
+            $table->integer('stock');
+            $table->integer('cantidad');
             $table->timestamp('fechaPublicacion')->nullable();
             $table->timestamp('fechaEdicion')->nullable();
             $table->string('descripcionCorta',255);
@@ -25,10 +27,8 @@ class CreateProductoTable extends Migration
             $table->text('imagen');
             $table->integer('idCategoria_producto');
             $table->integer('idOpciones_producto');
-            $table->integer('idInventario');
             $table->foreign('idCategoria_producto')->references('id')->on('categoria_producto');
             $table->foreign('idOpciones_producto')->references('id')->on('opciones_producto');
-            $table->foreign('idInventario')->references('id')->on('inventario');
         });
     }
 
