@@ -17,7 +17,7 @@ class CreateListaDeseosTable extends Migration
             $table->integer('id')->autoIncrement();
             $table->integer('idProducto');
             $table->integer('cantidadProductos');
-            $table->foreign('idProducto')->references('id')->on('producto');
+            $table->foreign('idProducto')->references('id')->on('productos');
         });
     }
 

@@ -13,7 +13,7 @@ class CreateProductoTable extends Migration
      */
     public function up()
     {
-        Schema::create('producto', function (Blueprint $table) {
+        Schema::create('productos', function (Blueprint $table) {
             $table->integer('id')->autoIncrement();
             $table->string('nombre', 100);
             $table->string('sku', 100);
@@ -27,8 +27,8 @@ class CreateProductoTable extends Migration
             $table->text('imagen');
             $table->integer('idCategoria_producto');
             $table->integer('idOpciones_producto');
-            $table->foreign('idCategoria_producto')->references('id')->on('categoria_producto');
-            $table->foreign('idOpciones_producto')->references('id')->on('opciones_producto');
+            $table->foreign('idCategoria_producto')->references('id')->on('categoria_productos');
+            $table->foreign('idOpciones_producto')->references('id')->on('opciones_productos');
         });
     }
 

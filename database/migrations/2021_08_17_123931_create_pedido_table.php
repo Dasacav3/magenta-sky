@@ -13,7 +13,7 @@ class CreatePedidoTable extends Migration
      */
     public function up()
     {
-        Schema::create('pedido', function (Blueprint $table) {
+        Schema::create('pedidos', function (Blueprint $table) {
             $table->integer('id')->autoIncrement();
             $table->timestamp('fechaCreacion')->nullable();
             $table->enum('estadoPedido', ['procesando', 'pendiente_pago', 'en_espera', 'completado', 'cancelado', 'reembolso']);
@@ -24,9 +24,9 @@ class CreatePedidoTable extends Migration
             $table->integer('idZonas_envio');
             $table->integer('idProducto');
             $table->foreign('idCliente')->references('id')->on('users');
-            $table->foreign('idMetodo_pago')->references('id')->on('metodo_pago');
-            $table->foreign('idZonas_envio')->references('id')->on('zonas_envio');
-            $table->foreign('idProducto')->references('id')->on('producto');
+            $table->foreign('idMetodo_pago')->references('id')->on('metodo_pagos');
+            $table->foreign('idZonas_envio')->references('id')->on('zonas_envios');
+            $table->foreign('idProducto')->references('id')->on('productos');
         });
     }
 

@@ -13,7 +13,7 @@ class CreateCuponTable extends Migration
      */
     public function up()
     {
-        Schema::create('cupon', function (Blueprint $table) {
+        Schema::create('cupones', function (Blueprint $table) {
             $table->integer('id')->autoIncrement();
             $table->string('tipoCupon',100);
             $table->double('importeCupon');

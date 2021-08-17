@@ -13,12 +13,12 @@ class CreateCarritoTable extends Migration
      */
     public function up()
     {
-        Schema::create('carrito', function (Blueprint $table) {
+        Schema::create('carritos', function (Blueprint $table) {
             $table->integer('id')->autoIncrement();
             $table->integer('idProducto');
             $table->integer('cantidadProductos');
             $table->float('total');
-            $table->foreign('idProducto')->references('id')->on('producto');
+            $table->foreign('idProducto')->references('id')->on('productos');
         });
     }
 
