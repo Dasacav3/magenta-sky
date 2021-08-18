@@ -32,16 +32,66 @@
                     <h4 class="text-2xl font-bold pb-5">Añadir pedidos</h4>
 
                     <form method="POST" class="flex justify-center flex-col">
-                        <label>Nombre producto</label>
-                        <input type="text" class="border border-black">
-                        <label>Producto SKU</label>
-                        <input type="text" class="border border-black">
-                        <label>Precio</label>
-                        <input type="number" class="border border-black">
-                        <label>Stock</label>
-                        <input type="number" class="border border-black">
-                        <label>Producto SKU</label>
-                        <input type="text" class="border border-black">
+                        <legend class="text-left">Facturación</legend>
+                        <fieldset>
+                            <label>Fecha de creación</label>
+                            <input type="date" class="border border-black">
+                            <label>Estado</label>
+                            <select name="estado" id="estado" class="border border-black">
+                                <option value="">Pendiente de pago</option>
+                                <option value="">Procesando</option>
+                                <option value="">En espera</option>
+                                <option value="">Completado</option>
+                                <option value="">Cancelado</option>
+                                <option value="">Reembolsado</option>
+                                <option value="">Fallido</option>
+                            </select>
+                            <label>Cliente</label>
+                            <select name="cliente" id="cliente" class="border border-black">
+                                <option value="">Invitado</option>
+                                <option value=""></option>
+                                <option value=""></option>
+                                <option value=""></option>
+                                <option value=""></option>
+                                <option value=""></option>
+                                <option value=""></option>
+                            </select>
+                            <label>Dirección facturación</label>
+                            <input type="text" class="border border-black">
+                            <label>Correo electronico</label>
+                            <input type="email" class="border border-black">
+                            <label>Dirección de envio</label>
+                            <input type="text" class="border border-black">
+                        </fieldset>
+                        <legend class="text-left">Producto</legend>
+                        <fieldset>
+                            <label>Producto</label>
+                            <select name="estado" id="estado" class="border border-black">
+                                <option value="">Producto #1</option>
+                                <option value=""></option>
+                                <option value=""></option>
+                            </select>
+                            <label>Cantidad</label>
+                            <input type="number" name="cantidad" id="cantidad" class="border border-black">
+                            <button
+                                class="text-white bg-red-400 rounded-xl px-2 py-1 text-shadow mb-4 transition-colors duration-150 ease-linear">Añadir
+                                producto</button>
+                            <table>
+                                <tfoot>
+                                    <th>Articulo</th>
+                                    <th>Coste</th>
+                                    <th>Cantidad</th>
+                                    <th>Total</th>
+                                </tfoot>
+                                <tbody>
+
+                                </tbody>
+                            </table>
+                            <button
+                                class="text-white bg-red-400 rounded-xl px-2 py-1 text-shadow mb-4 transition-colors duration-150 ease-linear">Guardar</button>
+                        </fieldset>
+                        <label for="">Notas del pedido</label>
+                        <textarea name="" id="" cols="20" rows="10" placeholder="Añade una nota" class="border border-black"></textarea>
                     </form>
 
                     <!-- Buttons -->
@@ -49,7 +99,8 @@
                         <button @click="showModal = !showModal"
                             class="px-4 py-2 text-sm bg-white rounded-xl border transition-colors duration-150 ease-linear border-gray-200 text-gray-500 focus:outline-none focus:ring-0 font-bold hover:bg-gray-50 focus:bg-indigo-50 focus:text-indigo">Cancelar</button>
                         <button
-                            class="text-white bg-gray-700 rounded-xl px-4 py-2 text-shadow mb-4 transition-colors duration-150 ease-linear">Añadir</button>
+                            class="text-white bg-gray-700 rounded-xl px-4 py-2 text-shadow mb-4 transition-colors duration-150 ease-linear">Crear
+                            pedido</button>
                     </div>
                 </div>
             </div>

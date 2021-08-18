@@ -2,8 +2,10 @@
 
 @includeIf('admin.navbar')
 
-<div class="flex flex-col justify-center w-full">
-    <canvas id="myChart"></canvas>
+<div class="flex justify-center w-full">
+    <div class="flex flex-col" style="width: 900px;">
+        <canvas id="myChart"></canvas>
+    </div>
 </div>
 <script>
     var ctx = document.getElementById('myChart');
@@ -42,6 +44,4 @@
     });
 </script>
 
-<div>
-
-    @includeIf('admin.footer')
+@includeIf('admin.footer')

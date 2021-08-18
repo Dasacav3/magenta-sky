@@ -55,6 +55,13 @@
                         </div>
                         <input type="text" class="border border-black" placeholder="Escribe para añadir una categoria">
                         <button class="bg-red-400 text-white w-max px-3 self-center my-3">Añadir categoria</button>
+                        <label>Opciones producto</label>
+                        <select name="cliente" id="cliente" class="border border-black">
+                            <option value="S">S</option>
+                            <option value="M">M</option>
+                            <option value="L">L</option>
+                            <option value="XL">XL</option>
+                        </select>
                         <label>Imagen</label>
                         <input type="file" name="foto_producto" class="border border-black">
                     </form>
