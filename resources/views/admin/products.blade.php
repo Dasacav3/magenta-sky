@@ -88,15 +88,17 @@
             <th>EDICIÓN</th>
         </thead>
         <tbody>
-            <tr>
-                <td>F</td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
+            @foreach ($productos as $producto)
+                <tr>
+                    <td>{{ $producto->id }}</td>
+                    <td>{{ $producto->sku }}</td>
+                    <td>{{ $producto->nombre }}</td>
+                    <td>{{ $producto->precio }}</td>
+                    <td>{{ $producto->cantidad }}</td>
+                    <td class="flex justify-center"><img src="{{ $producto->imagen }}" width="100px"></td>
+                    <td><button><i class="fas fa-edit"></i></button></td>
+                </tr>
+            @endforeach
         </tbody>
         <tfoot class="bg-gray-700 text-white">
             <th>ID</th>

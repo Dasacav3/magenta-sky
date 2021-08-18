@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Producto;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -20,7 +21,7 @@ class HomeController extends Controller
     public function customers()
     {
         if (Auth::user()->rol == "admin") {
-            $datos['users'] = User::paginate(1000);
+            $datos['users'] = User::paginate(200);
             return view('admin.customers', $datos);
         }
         return redirect()->route('panel');
@@ -29,7 +30,8 @@ class HomeController extends Controller
     public function products()
     {
         if (Auth::user()->rol == "admin") {
-            return view('admin.products');
+            $datos['productos'] = Producto::paginate(200);
+            return view('admin.products', $datos);
         }
         return redirect()->route('panel');
     }
