@@ -25,6 +25,7 @@ class DatabaseSeeder extends Seeder
         $admin->password = '$2y$10$e6J.gCiN7t2/d/Ra.GRFsOc4NuAWEIMHwivKCMQsBMqbTe2eYFYKm';
         $admin->rol = "admin";
         $admin->ciudad = "Bogota";
+        $admin->save();
 
         $opcionesProducto_S = new OpcionesProducto();
         $opcionesProducto_S->nombre = "tamaño";
