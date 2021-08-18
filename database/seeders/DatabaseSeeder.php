@@ -3,7 +3,9 @@
 namespace Database\Seeders;
 
 use App\Models\CategoriaProducto;
+use App\Models\MetodoPago;
 use App\Models\OpcionesProducto;
+use App\Models\ZonasEnvio;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -45,7 +47,41 @@ class DatabaseSeeder extends Seeder
         $categoriaProducto_mujer->save();
 
         $categoriaProducto_accesorio = new CategoriaProducto();
-        $categoriaProducto_accesorio ->nombreCategoria = "accesorio";
-        $categoriaProducto_accesorio ->save();
+        $categoriaProducto_accesorio->nombreCategoria = "accesorio";
+        $categoriaProducto_accesorio->save();
+
+        $pagoContraEntrega = new MetodoPago();
+        $pagoContraEntrega->nombre = "contraentrega";
+        $pagoContraEntrega->descripcionMetodo = "Paga cuando tus productos lleguen a tu casa";
+        $pagoContraEntrega->save();
+
+        $pagoTransferencia = new MetodoPago();
+        $pagoTransferencia->nombre = "transferencia";
+        $pagoTransferencia->descripcionMetodo = "Realiza la transferencia a la cuenta bancaria para continuar tu proceso";
+        $pagoTransferencia->save();
+
+        $pagoMercadoPago = new MetodoPago();
+        $pagoMercadoPago->nombre = "mercadopago";
+        $pagoMercadoPago->descripcionMetodo = "Paga con el medio de pago que prefieras";
+        $pagoMercadoPago->save();
+
+        $pagoWompi = new MetodoPago();
+        $pagoWompi->nombre = "wompi";
+        $pagoWompi->descripcionMetodo = "Paga con Bancolombia a la mano junto a otros metodos";
+        $pagoWompi->save();
+
+        $zonaEnvioBogota = new ZonasEnvio();
+        $zonaEnvioBogota->nombreZona = "Bogota DC";
+        $zonaEnvioBogota->regionZona = "Bogota DC";
+        $zonaEnvioBogota->metodosEnvio = "Terrestre";
+        $zonaEnvioBogota->costoZonaEnvio = 10000;
+        $zonaEnvioBogota->save();
+
+        $zonaEnvioYopal = new ZonasEnvio();
+        $zonaEnvioYopal->nombreZona = "Yopal";
+        $zonaEnvioYopal->regionZona = "Casanare";
+        $zonaEnvioYopal->metodosEnvio = "Terrestre";
+        $zonaEnvioYopal->costoZonaEnvio = 25000;
+        $zonaEnvioYopal->save();
     }
 }

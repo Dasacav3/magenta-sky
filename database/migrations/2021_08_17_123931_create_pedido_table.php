@@ -17,8 +17,8 @@ class CreatePedidoTable extends Migration
             $table->integer('id')->autoIncrement();
             $table->timestamp('fechaCreacion')->nullable();
             $table->enum('estadoPedido', ['procesando', 'pendiente_pago', 'en_espera', 'completado', 'cancelado', 'reembolso']);
-            $table->string('direccionEnvio', 100);
-            $table->text('notasPedido');
+            $table->string('direccionEnvio', 100)->nullable();
+            $table->text('notasPedido')->nullable();
             $table->integer('idCliente');
             $table->integer('idMetodo_pago');
             $table->integer('idZonas_envio');
@@ -26,7 +26,6 @@ class CreatePedidoTable extends Migration
             $table->foreign('idCliente')->references('id')->on('users');
             $table->foreign('idMetodo_pago')->references('id')->on('metodo_pagos');
             $table->foreign('idZonas_envio')->references('id')->on('zonas_envios');
-            $table->foreign('idProducto')->references('id')->on('productos');
         });
     }
 

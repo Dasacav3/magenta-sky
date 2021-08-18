@@ -91,7 +91,8 @@
                                 class="text-white bg-red-400 rounded-xl px-2 py-1 text-shadow mb-4 transition-colors duration-150 ease-linear">Guardar</button>
                         </fieldset>
                         <label for="">Notas del pedido</label>
-                        <textarea name="" id="" cols="20" rows="10" placeholder="Añade una nota" class="border border-black"></textarea>
+                        <textarea name="" id="" cols="20" rows="10" placeholder="Añade una nota"
+                            class="border border-black"></textarea>
                     </form>
 
                     <!-- Buttons -->
@@ -145,27 +146,29 @@
     <table id="example">
         <thead class="bg-gray-700 text-white">
             <th>ID</th>
-            <th>CLIENTE</th>
-            <th>CIUDAD</th>
             <th>FECHA</th>
+            <th>DIRECCION ENVIO</th>
+            <th>METODO PAGO</th>
             <th>ESTADO</th>
             <th>EDICIÓN</th>
         </thead>
         <tbody>
-            <tr>
-                <td>F</td>
-                <td>A</td>
-                <td>C</td>
-                <td>E</td>
-                <td>A</td>
-                <td>C</td>
-            </tr>
+            @foreach ($pedidos as $pedido)
+                <tr>
+                    <td>{{ $pedido->id }}</td>
+                    <td>{{ $pedido->fechaCreacion }}</td>
+                    <td>{{ $pedido->direccionEnvio }}</td>
+                    <td>{{ $pedido->idMetodo_pago }}</td>
+                    <td>{{ $pedido->estadoPedido }}</td>
+                    <td><button><i class="fas fa-edit"></i></button></td>
+                </tr>
+            @endforeach
         </tbody>
         <tfoot class="bg-gray-700 text-white">
             <th>ID</th>
-            <th>CLIENTE</th>
-            <th>CIUDAD</th>
             <th>FECHA</th>
+            <th>DIRECCION ENVIO</th>
+            <th>METODO PAGO</th>
             <th>ESTADO</th>
             <th>EDICIÓN</th>
         </tfoot>

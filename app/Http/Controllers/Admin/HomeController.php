@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Pedido;
 use App\Models\Producto;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -39,7 +40,8 @@ class HomeController extends Controller
     public function orders()
     {
         if (Auth::user()->rol == "admin") {
-            return view('admin.orders');
+            $datos['pedidos'] = Pedido::paginate(200);
+            return view('admin.orders', $datos);
         }
         return redirect()->route('panel');
     }
