@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use App\Models\CategoriaProducto;
 use App\Models\MetodoPago;
 use App\Models\OpcionesProducto;
+use App\Models\User;
 use App\Models\ZonasEnvio;
 use Illuminate\Database\Seeder;
 
@@ -18,6 +19,13 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         // \App\Models\User::factory(10)->create();
+        $admin = new User();
+        $admin->name = "Daniel Santiago Carrillo Velasquez";
+        $admin->email = "dscv3719@gmail.com";
+        $admin->password = '$2y$10$e6J.gCiN7t2/d/Ra.GRFsOc4NuAWEIMHwivKCMQsBMqbTe2eYFYKm';
+        $admin->rol = "admin";
+        $admin->ciudad = "Bogota";
+
         $opcionesProducto_S = new OpcionesProducto();
         $opcionesProducto_S->nombre = "tamaño";
         $opcionesProducto_S->descripcion = "S";
