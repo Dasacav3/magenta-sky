@@ -19,7 +19,7 @@ class CreateUsersTable extends Migration
             $table->string('name');
             $table->string('email')->unique();
             $table->string('provider_id')->nullable();
-            $table->text('avatar')->default("/img/profile_photo/default.png");
+            $table->string('avatar')->default("/img/profile_photo/default.png");
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password')->nullable();
             $table->enum('rol', ['admin', 'customer'])->default('customer');
