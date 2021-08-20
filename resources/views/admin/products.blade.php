@@ -48,19 +48,27 @@
                         <textarea class="border border-black resize-none" rows="10" cols="10"></textarea>
                         <label>Categorias</label>
                         <div id="categorias" class="flex">
-                            <label class="pr-2"><input type="checkbox" id="hombre" value="hombre"> Hombre</label><br>
+                            {{-- <label class="pr-2"><input type="checkbox" id="hombre" value="hombre"> Hombre</label><br>
                             <label class="pr-2"><input type="checkbox" id="mujer" value="mujer"> Mujer</label><br>
                             <label class="pr-2"><input type="checkbox" id="accesorio" value="accesorio">
-                                Accesorios</label><br>
+                                Accesorios</label><br> --}}
+                            @foreach ($categorias as $item)
+                                <label class="pr-2 capitalize"><input type="checkbox" id="$item"
+                                        value="{{ $item->nombreCategoria }}">
+                                    {{ $item->nombreCategoria }}</label><br>
+                            @endforeach
                         </div>
                         <input type="text" class="border border-black" placeholder="Escribe para añadir una categoria">
                         <button class="bg-red-400 text-white w-max px-3 self-center my-3">Añadir categoria</button>
                         <label>Opciones producto</label>
-                        <select name="cliente" id="cliente" class="border border-black">
-                            <option value="S">S</option>
+                        <select name="opciones" id="opciones" class="border border-black">
+                            {{-- <option value="S">S</option>
                             <option value="M">M</option>
                             <option value="L">L</option>
-                            <option value="XL">XL</option>
+                            <option value="XL">XL</option> --}}
+                            @foreach ($opciones as $item)
+                                <option value="{{ $item->descripcion }}">{{ $item->descripcion }}</option>
+                            @endforeach
                         </select>
                         <label>Imagen</label>
                         <input type="file" name="foto_producto" class="border border-black">
