@@ -38,23 +38,22 @@
                             <input type="date" class="border border-black">
                             <label>Estado</label>
                             <select name="estado" id="estado" class="border border-black">
-                                <option value="">Pendiente de pago</option>
-                                <option value="">Procesando</option>
-                                <option value="">En espera</option>
-                                <option value="">Completado</option>
-                                <option value="">Cancelado</option>
-                                <option value="">Reembolsado</option>
-                                <option value="">Fallido</option>
+                                <option value="pendiente_pago">Pendiente de pago</option>
+                                <option value="procesando">Procesando</option>
+                                <option value="en_espera">En espera</option>
+                                <option value="completado">Completado</option>
+                                <option value="cancelado">Cancelado</option>
+                                <option value="reembolso">Reembolsado</option>
+                                <option value="fallido">Fallido</option>
                             </select>
                             <label>Cliente</label>
                             <select name="cliente" id="cliente" class="border border-black">
-                                <option value="">Invitado</option>
-                                <option value=""></option>
-                                <option value=""></option>
-                                <option value=""></option>
-                                <option value=""></option>
-                                <option value=""></option>
-                                <option value=""></option>
+                                <option value="invitado">Invitado</option>
+
+                                @foreach ($cliente as $item)
+                                    <option value="{{ $item->id }}">{{ $item->name }}</option>
+                                @endforeach
+
                             </select>
                             <label>Dirección facturación</label>
                             <input type="text" class="border border-black">
@@ -66,10 +65,10 @@
                         <legend class="text-left">Producto</legend>
                         <fieldset>
                             <label>Producto</label>
-                            <select name="estado" id="estado" class="border border-black">
-                                <option value="">Producto #1</option>
-                                <option value=""></option>
-                                <option value=""></option>
+                            <select name="producto" id="producto" class="border border-black">
+                                @foreach ($productos as $item)
+                                    <option value="{{ $item->id }}">{{ $item->id }} - {{ $item->nombre }}</option>
+                                @endforeach
                             </select>
                             <label>Cantidad</label>
                             <input type="number" name="cantidad" id="cantidad" class="border border-black">
@@ -132,8 +131,12 @@
 
                 <h4 class="text-2xl font-bold pb-5">Metodos de pago</h4>
 
-                <p>Mercado pago</p>
-                <p>Wompi</p>
+                @foreach ($metodos as $item)
+                    <div class="flex">
+                        <p class="capitalize font-bold mr-2">{{ $item->nombre }}</p>
+                        <p>{{ $item->descripcionMetodo }}</p>
+                    </div>
+                @endforeach
 
                 <!-- Buttons -->
                 <div class="text-right space-x-5 mt-5 flex justify-center items-center">
