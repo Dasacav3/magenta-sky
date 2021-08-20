@@ -3,6 +3,10 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\CategoriaProducto;
+use App\Models\Cliente;
+use App\Models\MetodoPago;
+use App\Models\OpcionesProducto;
 use App\Models\Pedido;
 use App\Models\Producto;
 use App\Models\User;
@@ -32,7 +36,9 @@ class HomeController extends Controller
     {
         if (Auth::user()->rol == "admin") {
             $datos['productos'] = Producto::paginate(200);
-            return view('admin.products', $datos);
+            $categorias['categorias'] = CategoriaProducto::paginate(200);
+            $categorias ['opciones'] = OpcionesProducto::paginate(200);
+            return view('admin.products', $datos, $categorias);
         }
         return redirect()->route('panel');
     }
@@ -41,6 +47,9 @@ class HomeController extends Controller
     {
         if (Auth::user()->rol == "admin") {
             $datos['pedidos'] = Pedido::paginate(200);
+            $datos['metodos'] = MetodoPago::paginate(20);
+            $datos['cliente'] = User::paginate(200);
+            $datos['productos'] = Producto::paginate(200);
             return view('admin.orders', $datos);
         }
         return redirect()->route('panel');
