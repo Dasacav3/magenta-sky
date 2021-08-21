@@ -32,16 +32,16 @@ class HomeController extends Controller
         return redirect()->route('panel');
     }
 
-    public function products()
-    {
-        if (Auth::user()->rol == "admin") {
-            $datos['productos'] = Producto::paginate(200);
-            $categorias['categorias'] = CategoriaProducto::paginate(200);
-            $categorias ['opciones'] = OpcionesProducto::paginate(200);
-            return view('admin.products', $datos, $categorias);
-        }
-        return redirect()->route('panel');
-    }
+    // public function products()
+    // {
+    //     if (Auth::user()->rol == "admin") {
+    //         $datos['productos'] = Producto::paginate(200);
+    //         $categorias['categorias'] = CategoriaProducto::paginate(200);
+    //         $categorias ['opciones'] = OpcionesProducto::paginate(200);
+    //         return view('admin.products', $datos, $categorias);
+    //     }
+    //     return redirect()->route('panel');
+    // }
 
     public function orders()
     {

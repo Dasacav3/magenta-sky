@@ -69,7 +69,7 @@ Envíos seguros a todo el país ✈️'])
 
         <div class="grid grid-cols-1 md:grid-cols-3 xl:grid-cols-5 justify-items-center py-10 gap-y-8">
 
-            <div class="card">
+            {{-- <div class="card">
                 <div>
                     <img class="card-img" src="assets/1.png" alt="" loading="lazy">
                     <div class="card-state">
@@ -84,7 +84,25 @@ Envíos seguros a todo el país ✈️'])
                     <p class="card-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim ex quis
                         voluptatibus praesentium vitae natus dicta.</p>
                 </div>
-            </div>
+            </div> --}}
+
+            @foreach ($productos as $item)
+                <div class="card">
+                    <div>
+                        <img class="card-img" src="{{$item->imagen}}" alt="" loading="lazy">
+                        <div class="card-state">
+                            ¡Nuevo!
+                        </div>
+                        <div class="card-price">
+                            ${{$item->precio}}
+                        </div>
+                    </div>
+                    <div class="card-content p-2">
+                        <h4 class="card-title font-bold text-xl">{{$item->nombre}}</h4>
+                        <p class="card-description">{{$item->descripcionCorta}}</p>
+                    </div>
+                </div>
+            @endforeach
 
             <div class="card">
                 <div>

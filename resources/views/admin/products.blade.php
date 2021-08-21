@@ -29,64 +29,65 @@
                     x-transition:leave-start="opacity-100 scale-100 translate-y-0"
                     x-transition:leave-end="opacity-0 scale-90 translate-y-1">
 
-                    <h4 class="text-2xl font-bold pb-5">Añadir pedidos</h4>
+                    <h4 class="text-2xl font-bold pb-5">Añadir producto</h4>
 
-                    <form method="POST" class="flex justify-center flex-col">
+                    <form id="formProducto" method="POST" action="{{ route('productos.create') }}" enctype="multipart/form-data"
+                        class="flex justify-center flex-col">
+                        @csrf
                         <label>Nombre producto</label>
-                        <input type="text" class="border border-black">
+                        <input type="text" class="border border-black" name="nombreProducto">
                         <label>SKU</label>
-                        <input type="text" class="border border-black">
+                        <input type="text" class="border border-black" name="skuProducto">
                         <label>Precio</label>
-                        <input type="number" class="border border-black">
+                        <input type="number" class="border border-black" name="precioProducto">
                         <label>Stock</label>
-                        <input type="number" class="border border-black">
+                        <input type="number" class="border border-black" name="stockProducto">
                         <label>Cantidad</label>
-                        <input type="text" class="border border-black">
+                        <input type="text" class="border border-black" name="cantidadProducto">
                         <label>Descripción corta</label>
-                        <textarea class="border border-black resize-none" rows="3" cols="10"></textarea>
+                        <textarea class="border border-black resize-none" rows="3" cols="10"
+                            name="descripcionCorta"></textarea>
                         <label>Descripción larga</label>
-                        <textarea class="border border-black resize-none" rows="10" cols="10"></textarea>
+                        <textarea class="border border-black resize-none" rows="10" cols="10"
+                            name="descripcionLarga"></textarea>
                         <label>Categorias</label>
                         <div id="categorias" class="flex">
-                            {{-- <label class="pr-2"><input type="checkbox" id="hombre" value="hombre"> Hombre</label><br>
-                            <label class="pr-2"><input type="checkbox" id="mujer" value="mujer"> Mujer</label><br>
-                            <label class="pr-2"><input type="checkbox" id="accesorio" value="accesorio">
-                                Accesorios</label><br> --}}
                             @foreach ($categorias as $item)
-                                <label class="pr-2 capitalize"><input type="checkbox" id="$item"
-                                        value="{{ $item->nombreCategoria }}">
+                                <label class="pr-2 capitalize"><input type="checkbox"
+                                        value="{{ $item->nombreCategoria }}"
+                                        name="categoria-{{ $item->nombreCategoria }}">
                                     {{ $item->nombreCategoria }}</label><br>
                             @endforeach
                         </div>
-                        <input type="text" class="border border-black" placeholder="Escribe para añadir una categoria">
-                        <button class="bg-red-400 text-white w-max px-3 self-center my-3">Añadir categoria</button>
+                        <input type="text" class="border border-black" placeholder="Escribe para añadir una categoria"
+                            name="nuevaCategoria">
+                        <button id="btnNuevaCategoria" class="bg-red-400 text-white w-max px-3 self-center my-3">Nueva
+                            categoria</button>
                         <label>Opciones producto</label>
-                        <select name="opciones" id="opciones" class="border border-black">
-                            {{-- <option value="S">S</option>
-                            <option value="M">M</option>
-                            <option value="L">L</option>
-                            <option value="XL">XL</option> --}}
+                        <select name="opcionesProducto" id="opciones" class="border border-black">
+                            <option value="">Seleccione una opción</option>
                             @foreach ($opciones as $item)
                                 <option value="{{ $item->descripcion }}">{{ $item->descripcion }}</option>
                             @endforeach
                         </select>
                         <label>Imagen</label>
-                        <input type="file" name="foto_producto" class="border border-black">
-                    </form>
+                        <input type="file" name="fotoProducto" class="border border-black" accept="image/*">
 
-                    <!-- Buttons -->
-                    <div class="text-right space-x-5 mt-5 flex justify-center items-center">
-                        <button @click="showModal = !showModal"
-                            class="px-4 py-2 text-sm bg-white rounded-xl border transition-colors duration-150 ease-linear border-gray-200 text-gray-500 focus:outline-none focus:ring-0 font-bold hover:bg-gray-50 focus:bg-indigo-50 focus:text-indigo">Cancelar</button>
-                        <button
-                            class="text-white bg-gray-700 rounded-xl px-4 py-2 text-shadow mb-4 transition-colors duration-150 ease-linear">Añadir</button>
-                    </div>
+
+                        <!-- Buttons -->
+                        <div class="text-right space-x-5 mt-5 flex justify-center items-center">
+                            <button @click="showModal = !showModal"
+                                class="px-4 py-2 text-sm bg-white rounded-xl border transition-colors duration-150 ease-linear border-gray-200 text-gray-500 focus:outline-none focus:ring-0 font-bold hover:bg-gray-50 focus:bg-indigo-50 focus:text-indigo">Cancelar</button>
+                            <input type="submit" value="Añadir"
+                                class="text-white bg-gray-700 rounded-xl px-4 py-2 text-shadow mb-4 transition-colors duration-150 ease-linear" />
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
     </div>
     <table id="example">
-        <thead class="bg-gray-700 text-white">
+        <thead class="bg-gray-700 text-white text-lg">
             <th>ID</th>
             <th>SKU</th>
             <th>NOMBRE</th>
@@ -95,20 +96,9 @@
             <th>IMAGEN</th>
             <th>EDICIÓN</th>
         </thead>
-        <tbody>
-            @foreach ($productos as $producto)
-                <tr>
-                    <td>{{ $producto->id }}</td>
-                    <td>{{ $producto->sku }}</td>
-                    <td>{{ $producto->nombre }}</td>
-                    <td>{{ $producto->precio }}</td>
-                    <td>{{ $producto->cantidad }}</td>
-                    <td class="flex justify-center"><img src="{{ $producto->imagen }}" width="100px"></td>
-                    <td><button><i class="fas fa-edit"></i></button></td>
-                </tr>
-            @endforeach
+        <tbody id="table_data" class="text-lg">
         </tbody>
-        <tfoot class="bg-gray-700 text-white">
+        <tfoot class="bg-gray-700 text-white text-lg">
             <th>ID</th>
             <th>SKU</th>
             <th>NOMBRE</th>
@@ -124,16 +114,63 @@
 
 <script>
     $(document).ready(function() {
+        const table_data = document.getElementById("table_data");
         $('#example').DataTable({
             "responsive": true,
             "language": {
                 "url": "https://cdn.datatables.net/plug-ins/1.10.25/i18n/Spanish.json"
-            }
+            },
+            "ajax": {
+                "url": "{{ route('productos.get') }}",
+                "type": "POST",
+                "data": {
+                    "_token": $('input[name="_token"]').val()
+                },
+                "dataSrc": '',
+
+            },
+
+            "columns": [{
+                    "data": "id"
+                },
+                {
+                    "data": "sku"
+                },
+                {
+                    "data": "nombre"
+                },
+                {
+                    "data": "precio"
+                },
+                {
+                    "data": "cantidad"
+                },
+                {
+                    "data": "imagen"
+                },
+                {
+                    "data": ""
+                },
+            ],
+            "deferRender": true,
+            "columnDefs": [{
+                    "targets": -2,
+                    "data": "img",
+                    "render": function(data, type, row, meta) {
+                        return '<div class="w-full flex justify-center"><img width="100px" src="' + data + '"/></div>';
+                    }
+                },
+                {
+                    "targets": -1,
+                    "data": null,
+                    "defaultContent": "<button><i class='fas fa-edit'></i></button>"
+                },
+            ],
         });
     });
 </script>
 
 
-<script src="/js/products.js"></script>
+{{-- <script src="/js/products.js"></script> --}}
 
 @includeIf('admin.footer')
