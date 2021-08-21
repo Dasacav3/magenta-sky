@@ -25,9 +25,7 @@ class CreateProductoTable extends Migration
             $table->string('descripcionCorta',255);
             $table->text('descripcionLarga');
             $table->text('imagen');
-            $table->integer('idCategoria_producto');
             $table->integer('idOpciones_producto');
-            $table->foreign('idCategoria_producto')->references('id')->on('categoria_productos');
             $table->foreign('idOpciones_producto')->references('id')->on('opciones_productos');
         });
     }
@@ -39,6 +37,6 @@ class CreateProductoTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('producto');
+        Schema::dropIfExists('productos');
     }
 }

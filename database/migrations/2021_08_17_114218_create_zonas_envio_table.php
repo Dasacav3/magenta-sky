@@ -29,6 +29,6 @@ class CreateZonasEnvioTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('zonas_envio');
+        Schema::dropIfExists('zonas_envios');
     }
 }

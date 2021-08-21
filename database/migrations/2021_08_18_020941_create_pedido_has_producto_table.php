@@ -32,6 +32,6 @@ class CreatePedidoHasProductoTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('pedido_has_producto');
+        Schema::dropIfExists('pedido_has_productos');
     }
 }

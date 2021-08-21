@@ -27,6 +27,6 @@ class CreateOpcionesProductoTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('opciones_producto');
+        Schema::dropIfExists('opciones_productos');
     }
 }
