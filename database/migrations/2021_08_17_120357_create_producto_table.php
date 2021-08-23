@@ -25,8 +25,6 @@ class CreateProductoTable extends Migration
             $table->string('descripcionCorta',255);
             $table->text('descripcionLarga');
             $table->text('imagen');
-            $table->integer('idOpciones_producto');
-            $table->foreign('idOpciones_producto')->references('id')->on('opciones_productos');
         });
     }
 

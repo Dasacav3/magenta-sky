@@ -28,24 +28,99 @@ class DatabaseSeeder extends Seeder
         $admin->save();
 
         $opcionesProducto_S = new OpcionesProducto();
-        $opcionesProducto_S->nombre = "tamaño";
-        $opcionesProducto_S->descripcion = "S";
+        $opcionesProducto_S->nombre = "S";
+        $opcionesProducto_S->descripcion = "Tamaño";
         $opcionesProducto_S->save();
 
         $opcionesProducto_M = new OpcionesProducto();
-        $opcionesProducto_M->nombre = "tamaño";
-        $opcionesProducto_M->descripcion = "M";
+        $opcionesProducto_M->nombre = "M";
+        $opcionesProducto_M->descripcion = "Tamaño";
         $opcionesProducto_M->save();
 
         $opcionesProducto_L = new OpcionesProducto();
-        $opcionesProducto_L->nombre = "tamaño";
-        $opcionesProducto_L->descripcion = "L";
+        $opcionesProducto_L->nombre = "L";
+        $opcionesProducto_L->descripcion = "Tamaño";
         $opcionesProducto_L->save();
 
         $opcionesProducto_XL = new OpcionesProducto();
-        $opcionesProducto_XL->nombre = "tamaño";
-        $opcionesProducto_XL->descripcion = "XL";
+        $opcionesProducto_XL->nombre = "XL";
+        $opcionesProducto_XL->descripcion = "Tamaño";
         $opcionesProducto_XL->save();
+
+        $opcionesProducto_Talla1 = new OpcionesProducto();
+        $opcionesProducto_Talla1 ->nombre = "5-35";
+        $opcionesProducto_Talla1 ->descripcion = "Calzado US/Europe";
+        $opcionesProducto_Talla1 ->save();
+
+        $opcionesProducto_Talla2 = new OpcionesProducto();
+        $opcionesProducto_Talla2 ->nombre = "5.5-35.5";
+        $opcionesProducto_Talla2 ->descripcion = "Calzado US/Europe";
+        $opcionesProducto_Talla2 ->save();
+
+        $opcionesProducto_Talla3 = new OpcionesProducto();
+        $opcionesProducto_Talla3 ->nombre = "6-36";
+        $opcionesProducto_Talla3 ->descripcion = "Calzado US/Europe";
+        $opcionesProducto_Talla3 ->save();
+
+        $opcionesProducto_Talla4 = new OpcionesProducto();
+        $opcionesProducto_Talla4 ->nombre = "6.5-37";
+        $opcionesProducto_Talla4 ->descripcion = "Calzado US/Europe";
+        $opcionesProducto_Talla4 ->save();
+
+        $opcionesProducto_Talla5 = new OpcionesProducto();
+        $opcionesProducto_Talla5 ->nombre = "7-37.5";
+        $opcionesProducto_Talla5 ->descripcion = "Calzado US/Europe";
+        $opcionesProducto_Talla5 ->save();
+
+        $opcionesProducto_Talla6 = new OpcionesProducto();
+        $opcionesProducto_Talla6 ->nombre = "7.5-38";
+        $opcionesProducto_Talla6 ->descripcion = "Calzado US/Europe";
+        $opcionesProducto_Talla6 ->save();
+
+        $opcionesProducto_Talla7 = new OpcionesProducto();
+        $opcionesProducto_Talla7 ->nombre = "8-38.5";
+        $opcionesProducto_Talla7 ->descripcion = "Calzado US/Europe";
+        $opcionesProducto_Talla7 ->save();
+
+        $opcionesProducto_Talla8 = new OpcionesProducto();
+        $opcionesProducto_Talla8 ->nombre = "8.5-39";
+        $opcionesProducto_Talla8 ->descripcion = "Calzado US/Europe";
+        $opcionesProducto_Talla8 ->save();
+
+        $opcionesProducto_Talla9 = new OpcionesProducto();
+        $opcionesProducto_Talla9 ->nombre = "9-40";
+        $opcionesProducto_Talla9 ->descripcion = "Calzado US/Europe";
+        $opcionesProducto_Talla9 ->save();
+
+        $opcionesProducto_Talla10 = new OpcionesProducto();
+        $opcionesProducto_Talla10 ->nombre = "9.5-41";
+        $opcionesProducto_Talla10 ->descripcion = "Calzado US/Europe";
+        $opcionesProducto_Talla10 ->save();
+
+        $opcionesProducto_Talla11 = new OpcionesProducto();
+        $opcionesProducto_Talla11 ->nombre = "10-42";
+        $opcionesProducto_Talla11 ->descripcion = "Calzado US/Europe";
+        $opcionesProducto_Talla11 ->save();
+
+        $opcionesProducto_Talla12 = new OpcionesProducto();
+        $opcionesProducto_Talla12 ->nombre = "10.5-43";
+        $opcionesProducto_Talla12 ->descripcion = "Calzado US/Europe";
+        $opcionesProducto_Talla12 ->save();
+
+        $opcionesProducto_Talla13 = new OpcionesProducto();
+        $opcionesProducto_Talla13 ->nombre = "12-44";
+        $opcionesProducto_Talla13 ->descripcion = "Calzado US/Europe";
+        $opcionesProducto_Talla13 ->save();
+
+        $opcionesProducto_Talla14 = new OpcionesProducto();
+        $opcionesProducto_Talla14 ->nombre = "13-45";
+        $opcionesProducto_Talla14 ->descripcion = "Calzado US/Europe";
+        $opcionesProducto_Talla14 ->save();
+
+        $opcionesProducto_Talla15 = new OpcionesProducto();
+        $opcionesProducto_Talla15 ->nombre = "14-46.5";
+        $opcionesProducto_Talla15 ->descripcion = "Calzado US/Europe";
+        $opcionesProducto_Talla15 ->save();
 
         $categoriaProducto_hombre = new CategoriaProducto();
         $categoriaProducto_hombre->nombreCategoria = "hombre";
