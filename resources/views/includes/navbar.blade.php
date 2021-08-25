@@ -16,7 +16,7 @@
         <div class="container m-auto text-white flex flex-column justify-between">
             <div>
                 <a href="/" class="flex flex-column items-center">
-                    <img class="w-24 p-2" src="assets/favicon.png" alt="Magenta Sky Logo">
+                    <img class="w-24 p-2" src="/img/favicon.png" alt="Magenta Sky Logo">
                     <h1 class="pl-2 text-3xl text-shadow font-extrabold uppercase">Magenta Sky</h1>
                 </a>
             </div>

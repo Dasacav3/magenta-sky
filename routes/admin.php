@@ -23,6 +23,10 @@ Route::get('/productos', [ProductosController::class, 'index']);
 
 Route::post('/productos/create', [ProductosController::class, 'create'])->name("productos.create");
 
+Route::get('/productos/{producto}', [ProductosController::class, 'get']);
+
+Route::post('/productos/update', [ProductosController::class, 'edit'])->name("productos.edit");
+
 Route::post('/productos/categoria/add', [ProductosController::class, 'addCategory']);
 
 Route::post('/productos/get', [ProductosController::class, 'getall'])->name("productos.get");

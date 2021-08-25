@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Producto;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
 {
@@ -11,5 +12,14 @@ class HomeController extends Controller
     {
         $datos['productos'] = Producto::paginate(200);
         return view('index', $datos);
+    }
+
+
+    public function detalle($sku)
+    {
+
+        $producto = Producto::where('sku', '=', $sku)->get();
+
+        return view('detalles-producto', ['producto' => $producto[0]]);
     }
 }

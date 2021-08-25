@@ -34,7 +34,7 @@ window.addEventListener("DOMContentLoaded", () => {
                 data: "imagen",
             },
             {
-                data: "",
+                data: "id",
             },
         ],
         deferRender: true,
@@ -44,7 +44,7 @@ window.addEventListener("DOMContentLoaded", () => {
                 data: "img",
                 render: function (data, type, row, meta) {
                     return (
-                        '<div class="w-full flex justify-center"><img width="100px" src="' +
+                        '<div class="w-full flex justify-center"><img width="100px" src="/img/products_img/' +
                         data +
                         '"/></div>'
                     );
@@ -53,7 +53,11 @@ window.addEventListener("DOMContentLoaded", () => {
             {
                 targets: -1,
                 data: null,
-                defaultContent: "<button><i class='fas fa-edit'></i></button>",
+                render: function (data, type, row, meta) {
+                    return (
+                        "<button><a href='/admin/productos/"+data+"'><i class='fas fa-edit'></i></a></button>"
+                    );
+                },
             },
         ],
     });

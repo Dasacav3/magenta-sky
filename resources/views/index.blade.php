@@ -88,19 +88,21 @@ Envíos seguros a todo el país ✈️'])
 
             @foreach ($productos as $item)
                 <div class="card">
-                    <div>
-                        <img class="card-img" src="{{$item->imagen}}" alt="" loading="lazy">
-                        <div class="card-state">
-                            ¡Nuevo!
+                    <a href="/detalle/{{ $item->sku }}">
+                        <div>
+                            <img class="card-img" src="/img/products_img/{{ $item->imagen }}" alt="" loading="lazy">
+                            <div class="card-state">
+                                ¡Nuevo!
+                            </div>
+                            <div class="card-price">
+                                ${{ $item->precio }}
+                            </div>
                         </div>
-                        <div class="card-price">
-                            ${{$item->precio}}
+                        <div class="card-content p-2">
+                            <h4 class="card-title font-bold text-xl">{{ $item->nombre }}</h4>
+                            <p class="card-description">{{ $item->descripcionCorta }}</p>
                         </div>
-                    </div>
-                    <div class="card-content p-2">
-                        <h4 class="card-title font-bold text-xl">{{$item->nombre}}</h4>
-                        <p class="card-description">{{$item->descripcionCorta}}</p>
-                    </div>
+                    </a>
                 </div>
             @endforeach
 

@@ -36,8 +36,8 @@ class ProductosController extends Controller
     public function create(Request $request)
     {
         $now = new \DateTime();
-        $nombre = $request->file('fotoProducto')->getClientOriginalName();
-        $url = "/img/products_img/" . $now->getTimestamp() . "-" . $nombre;
+        $nombre = $now->getTimestamp() . "-" . $request->file('fotoProducto')->getClientOriginalName();
+        $url = "/img/products_img/" . $nombre;
         $ruta = public_path() . $url;
 
         Image::make($request->file('fotoProducto'))->resize(600, 600, function ($constraint) {
@@ -53,7 +53,7 @@ class ProductosController extends Controller
         $producto->cantidad = $request->cantidadProducto;
         $producto->descripcionCorta = $request->descripcionCorta;
         $producto->descripcionLarga = $request->descripcionLarga;
-        $producto->imagen = $url;
+        $producto->imagen = $nombre;
         $producto->save();
 
         foreach ($request->categorias as $data) {
@@ -69,6 +69,15 @@ class ProductosController extends Controller
         $productoOpciones->save();
 
         return redirect()->action([ProductosController::class, 'index']);
+    }
+
+    public function get(Producto $producto)
+    {
+        return view('admin.product-edit', ['producto' => $producto]);
+    }
+
+    public function edit(Request $request){
+        $request->all();
     }
 
     public function addCategory(Request $request)
