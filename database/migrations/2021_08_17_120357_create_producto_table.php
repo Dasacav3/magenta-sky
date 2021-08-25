@@ -17,12 +17,12 @@ class CreateProductoTable extends Migration
             $table->integer('id')->autoIncrement();
             $table->string('nombre', 100);
             $table->string('sku', 100);
-            $table->float('precio');
+            $table->float('precio', 20, 2);
             $table->integer('stock');
             $table->integer('cantidad');
             $table->timestamp('fechaPublicacion')->nullable();
             $table->timestamp('fechaEdicion')->nullable();
-            $table->string('descripcionCorta',255);
+            $table->string('descripcionCorta', 255);
             $table->text('descripcionLarga');
             $table->text('imagen');
         });

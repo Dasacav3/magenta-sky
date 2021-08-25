@@ -31,8 +31,8 @@
 
                     <h4 class="text-2xl font-bold pb-5">Añadir producto</h4>
 
-                    <form id="formProducto" method="POST" action="{{ route('productos.create') }}" enctype="multipart/form-data"
-                        class="flex justify-center flex-col">
+                    <form id="formProducto" method="POST" action="{{ route('productos.create') }}"
+                        enctype="multipart/form-data" class="flex justify-center flex-col">
                         @csrf
                         <label>Nombre producto</label>
                         <input type="text" class="border border-black" name="nombreProducto">
@@ -53,9 +53,8 @@
                         <label>Categorias</label>
                         <div id="categorias" class="flex">
                             @foreach ($categorias as $item)
-                                <label class="pr-2 capitalize"><input type="checkbox"
-                                        value="{{ $item->nombreCategoria }}"
-                                        name="categoria-{{ $item->nombreCategoria }}">
+                                <label class="pr-2 capitalize"><input type="checkbox" value="{{ $item->id }}"
+                                        name="categorias[]">
                                     {{ $item->nombreCategoria }}</label><br>
                             @endforeach
                         </div>
@@ -67,26 +66,24 @@
                         <select name="opcionesProducto" id="opciones" class="border border-black">
                             <option value="">Seleccione una opción</option>
                             @foreach ($opciones as $item)
-                                <option value="{{ $item->descripcion }}">{{ $item->descripcion }}</option>
+                                <option value="{{ $item->id }}">{{ $item->descripcion }} - {{ $item->nombre }}</option>
                             @endforeach
                         </select>
                         <label>Imagen</label>
                         <input type="file" name="fotoProducto" class="border border-black" accept="image/*">
-
-
                         <!-- Buttons -->
                         <div class="text-right space-x-5 mt-5 flex justify-center items-center">
                             <button @click="showModal = !showModal"
                                 class="px-4 py-2 text-sm bg-white rounded-xl border transition-colors duration-150 ease-linear border-gray-200 text-gray-500 focus:outline-none focus:ring-0 font-bold hover:bg-gray-50 focus:bg-indigo-50 focus:text-indigo">Cancelar</button>
-                            <input type="submit" value="Añadir"
-                                class="text-white bg-gray-700 rounded-xl px-4 py-2 text-shadow mb-4 transition-colors duration-150 ease-linear" />
+                            <input type="submit" value="Añadir" id="btnAddProduct"
+                                class="text-white ml-1 bg-gray-700 rounded-xl px-4 py-2 text-shadow transition-colors duration-150 ease-linear" />
                         </div>
                     </form>
                 </div>
             </div>
         </div>
     </div>
-    <table id="example">
+    <table id="datatable">
         <thead class="bg-gray-700 text-white text-lg">
             <th>ID</th>
             <th>SKU</th>
@@ -112,65 +109,6 @@
 
 </div>
 
-<script>
-    $(document).ready(function() {
-        const table_data = document.getElementById("table_data");
-        $('#example').DataTable({
-            "responsive": true,
-            "language": {
-                "url": "https://cdn.datatables.net/plug-ins/1.10.25/i18n/Spanish.json"
-            },
-            "ajax": {
-                "url": "{{ route('productos.get') }}",
-                "type": "POST",
-                "data": {
-                    "_token": $('input[name="_token"]').val()
-                },
-                "dataSrc": '',
-
-            },
-
-            "columns": [{
-                    "data": "id"
-                },
-                {
-                    "data": "sku"
-                },
-                {
-                    "data": "nombre"
-                },
-                {
-                    "data": "precio"
-                },
-                {
-                    "data": "cantidad"
-                },
-                {
-                    "data": "imagen"
-                },
-                {
-                    "data": ""
-                },
-            ],
-            "deferRender": true,
-            "columnDefs": [{
-                    "targets": -2,
-                    "data": "img",
-                    "render": function(data, type, row, meta) {
-                        return '<div class="w-full flex justify-center"><img width="100px" src="' + data + '"/></div>';
-                    }
-                },
-                {
-                    "targets": -1,
-                    "data": null,
-                    "defaultContent": "<button><i class='fas fa-edit'></i></button>"
-                },
-            ],
-        });
-    });
-</script>
-
-
-{{-- <script src="/js/products.js"></script> --}}
+<script src="/js/products.js"></script>
 
 @includeIf('admin.footer')

@@ -16,6 +16,7 @@ class CreatePedidoTable extends Migration
         Schema::create('pedidos', function (Blueprint $table) {
             $table->integer('id')->autoIncrement();
             $table->timestamp('fechaCreacion')->nullable();
+            $table->timestamp('fechaEdicion')->nullable();
             $table->enum('estadoPedido', ['procesando', 'pendiente_pago', 'en_espera', 'completado', 'cancelado', 'reembolso','fallido']);
             $table->string('direccionEnvio', 100)->nullable();
             $table->text('notasPedido')->nullable();

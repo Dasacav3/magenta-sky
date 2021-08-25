@@ -5,10 +5,9 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Producto extends Model
+class CategoriaProductoHasProductos extends Model
 {
     use HasFactory;
 
-    const CREATED_AT = 'fechaPublicacion';
-    const UPDATED_AT = 'fechaEdicion';
+    public $timestamps = false;
 }

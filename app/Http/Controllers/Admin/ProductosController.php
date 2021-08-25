@@ -5,12 +5,15 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use App\Models\CategoriaProducto;
+use App\Models\CategoriaProductoHasProductos;
 use App\Models\OpcionesProducto;
 use App\Models\Producto;
+use App\Models\ProductoHasOpcionesProductos;
 use Illuminate\Http\Client\Response;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
+use Intervention\Image\Facades\Image;
 
 class ProductosController extends Controller
 {
@@ -25,15 +28,47 @@ class ProductosController extends Controller
         return redirect()->route('panel');
     }
 
+    public function store(Request $request)
+    {
+        return $request->all();
+    }
+
     public function create(Request $request)
     {
-        // return $request->all();
-        $imagenes = $request->file('fotoProducto')->store('public/product_img');
+        $now = new \DateTime();
+        $nombre = $request->file('fotoProducto')->getClientOriginalName();
+        $url = "/img/products_img/" . $now->getTimestamp() . "-" . $nombre;
+        $ruta = public_path() . $url;
 
-        $url = Storage::url($imagenes);
+        Image::make($request->file('fotoProducto'))->resize(600, 600, function ($constraint) {
+            $constraint->aspectRatio();
+            $constraint->upsize();
+        })->save($ruta);
 
-        return $url;
+        $producto = new Producto();
+        $producto->nombre = $request->nombreProducto;
+        $producto->sku = $request->skuProducto;
+        $producto->precio = $request->precioProducto;
+        $producto->stock = $request->stockProducto;
+        $producto->cantidad = $request->cantidadProducto;
+        $producto->descripcionCorta = $request->descripcionCorta;
+        $producto->descripcionLarga = $request->descripcionLarga;
+        $producto->imagen = $url;
+        $producto->save();
 
+        foreach ($request->categorias as $data) {
+            $productoCategoria = new CategoriaProductoHasProductos();
+            $productoCategoria->idCategoria_producto = $data;
+            $productoCategoria->idProducto = $producto->id;
+            $productoCategoria->save();
+        }
+
+        $productoOpciones = new ProductoHasOpcionesProductos();
+        $productoOpciones->idOpciones_producto = $request->opcionesProducto;
+        $productoOpciones->idProducto = $producto->id;
+        $productoOpciones->save();
+
+        return redirect()->action([ProductosController::class, 'index']);
     }
 
     public function addCategory(Request $request)
