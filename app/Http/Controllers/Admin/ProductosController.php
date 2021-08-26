@@ -40,7 +40,7 @@ class ProductosController extends Controller
         $url = "/img/products_img/" . $nombre;
         $ruta = public_path() . $url;
 
-        Image::make($request->file('fotoProducto'))->resize(600, 600, function ($constraint) {
+        Image::make($request->file('fotoProducto')->getRealPath())->resize(600, 600, function ($constraint) {
             $constraint->aspectRatio();
             $constraint->upsize();
         })->save($ruta);
