@@ -22,4 +22,9 @@ class HomeController extends Controller
 
         return view('detalles-producto', ['producto' => $producto[0]]);
     }
+
+    public function terms()
+    {
+        return view('terms');
+    }
 }

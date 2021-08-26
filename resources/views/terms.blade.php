@@ -1,13 +1,27 @@
-<x-guest-layout>
-    <div class="pt-4 bg-gray-100">
-        <div class="min-h-screen flex flex-col items-center pt-6 sm:pt-0">
-            <div>
-                <x-jet-authentication-card-logo />
-            </div>
+@includeIf('includes.head', ['title' => 'Terminos y Condiciones | Magenta Sky'])
 
-            <div class="w-full sm:max-w-2xl mt-6 p-6 bg-white shadow-md overflow-hidden sm:rounded-lg prose">
-                {!! $terms !!}
-            </div>
-        </div>
+@includeIf('includes.navbar', ['active_link' => ''])
+
+<main>
+    <div class="container m-auto">
+        <h2 class="text-center text-2xl font-bold my-5">Terminos y Condiciones</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, aspernatur consectetur. Alias cumque
+            aperiam
+            molestiae corrupti iure voluptatibus minima, hic temporibus fuga quos accusamus voluptas provident eligendi,
+            voluptate dolore ipsam.</p>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quis, fugit optio doloribus officiis perspiciatis
+            maiores provident illo dolor voluptas dolorem. Consectetur expedita vel iure quos officiis itaque et
+            voluptatem
+            animi!</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, aspernatur consectetur. Alias cumque
+            aperiam
+            molestiae corrupti iure voluptatibus minima, hic temporibus fuga quos accusamus voluptas provident eligendi,
+            voluptate dolore ipsam.</p>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quis, fugit optio doloribus officiis perspiciatis
+            maiores provident illo dolor voluptas dolorem. Consectetur expedita vel iure quos officiis itaque et
+            voluptatem
+            animi!</p>
     </div>
-</x-guest-layout>
+</main>
+
+@includeIf('includes.footer')

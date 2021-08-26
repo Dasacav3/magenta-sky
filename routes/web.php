@@ -21,6 +21,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomeController::class, 'index']);
 
+Route::get('/terminos-y-condiciones', [HomeController::class, 'terms']);
+
 Route::get('/detalle/{sku}', [HomeController::class, 'detalle']);
 
 Route::resource('productos', ProductsController::class);
