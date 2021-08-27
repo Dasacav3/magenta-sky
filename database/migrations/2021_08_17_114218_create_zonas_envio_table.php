@@ -14,7 +14,7 @@ class CreateZonasEnvioTable extends Migration
     public function up()
     {
         Schema::create('zonas_envios', function (Blueprint $table) {
-            $table->integer('id')->autoIncrement();
+            $table->bigInteger('id')->autoIncrement();
             $table->string('nombreZona', 60);
             $table->string('regionZona', 60);
             $table->string('metodosEnvio', 60);

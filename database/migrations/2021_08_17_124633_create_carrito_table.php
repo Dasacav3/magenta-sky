@@ -14,8 +14,8 @@ class CreateCarritoTable extends Migration
     public function up()
     {
         Schema::create('carritos', function (Blueprint $table) {
-            $table->integer('id')->autoIncrement();
-            $table->integer('idProducto');
+            $table->bigInteger('id')->autoIncrement();
+            $table->bigInteger('idProducto');
             $table->integer('cantidadProductos');
             $table->float('total');
             $table->foreign('idProducto')->references('id')->on('productos');

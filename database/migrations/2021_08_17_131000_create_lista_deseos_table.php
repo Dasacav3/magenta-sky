@@ -14,8 +14,8 @@ class CreateListaDeseosTable extends Migration
     public function up()
     {
         Schema::create('lista_deseos', function (Blueprint $table) {
-            $table->integer('id')->autoIncrement();
-            $table->integer('idProducto');
+            $table->bigInteger('id')->autoIncrement();
+            $table->bigInteger('idProducto');
             $table->integer('cantidadProductos');
             $table->foreign('idProducto')->references('id')->on('productos');
         });

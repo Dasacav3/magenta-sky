@@ -14,9 +14,9 @@ class CreateCategoriaProductoHasProductoTable extends Migration
     public function up()
     {
         Schema::create('categoria_producto_has_productos', function (Blueprint $table) {
-            $table->integer('id')->autoIncrement();
-            $table->integer('idCategoria_producto');
-            $table->integer('idProducto');
+            $table->bigInteger('id')->autoIncrement();
+            $table->bigInteger('idCategoria_producto');
+            $table->bigInteger('idProducto');
             $table->foreign('idCategoria_producto')->references('id')->on('categoria_productos');
             $table->foreign('idProducto')->references('id')->on('productos');
         });

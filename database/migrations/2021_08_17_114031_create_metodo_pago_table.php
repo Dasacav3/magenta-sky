@@ -14,7 +14,7 @@ class CreateMetodoPagoTable extends Migration
     public function up()
     {
         Schema::create('metodo_pagos', function (Blueprint $table) {
-            $table->integer('id')->autoIncrement();
+            $table->bigInteger('id')->autoIncrement();
             $table->string('nombre', 60);
             $table->string('descripcionMetodo', 255);
         });

@@ -14,9 +14,9 @@ class CreatePedidoHasProductoTable extends Migration
     public function up()
     {
         Schema::create('pedido_has_producto', function (Blueprint $table) {
-            $table->integer('id')->autoIncrement();
-            $table->integer('idPedido');
-            $table->integer('idProducto');
+            $table->bigInteger('id')->autoIncrement();
+            $table->bigInteger('idPedido');
+            $table->bigInteger('idProducto');
             $table->integer('cantidad');
             $table->float('costo');
             $table->float('total');

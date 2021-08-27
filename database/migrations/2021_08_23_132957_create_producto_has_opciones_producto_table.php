@@ -14,9 +14,9 @@ class CreateProductoHasOpcionesProductoTable extends Migration
     public function up()
     {
         Schema::create('producto_has_opciones_productos', function (Blueprint $table) {
-            $table->integer('id')->autoIncrement();
-            $table->integer('idOpciones_producto');
-            $table->integer('idProducto');
+            $table->bigInteger('id')->autoIncrement();
+            $table->bigInteger('idOpciones_producto');
+            $table->bigInteger('idProducto');
             $table->foreign('idOpciones_producto')->references('id')->on('opciones_productos');
             $table->foreign('idProducto')->references('id')->on('productos');
         });

@@ -14,9 +14,9 @@ class CreateCuponHasProductoTable extends Migration
     public function up()
     {
         Schema::create('cupones_has_productos', function (Blueprint $table) {
-            $table->integer('id')->autoIncrement();
-            $table->integer('idCupon');
-            $table->integer('idProducto');
+            $table->bigInteger('id')->autoIncrement();
+            $table->bigInteger('idCupon');
+            $table->bigInteger('idProducto');
             $table->foreign('idCupon')->references('id')->on('cupones');
             $table->foreign('idProducto')->references('id')->on('productos');
         });
