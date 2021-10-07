@@ -66,7 +66,8 @@
                         <select name="opcionesProducto" id="opciones" class="border border-black">
                             <option value="">Seleccione una opción</option>
                             @foreach ($opciones as $item)
-                                <option value="{{ $item->id }}">{{ $item->descripcion }} - {{ $item->nombre }}</option>
+                                <option value="{{ $item->id }}">{{ $item->descripcion }} - {{ $item->nombre }}
+                                </option>
                             @endforeach
                         </select>
                         <label>Imagen</label>

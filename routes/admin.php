@@ -23,9 +23,9 @@ Route::get('/productos', [ProductosController::class, 'index']);
 
 Route::post('/productos/create', [ProductosController::class, 'create'])->name("productos.create");
 
-Route::get('/productos/{producto}', [ProductosController::class, 'get']);
+Route::get('/productos/{producto}', [ProductosController::class, 'get'])->name("producto.show");
 
-Route::post('/productos/update', [ProductosController::class, 'edit'])->name("productos.edit");
+Route::put('/productos/update/{producto}', [ProductosController::class, 'edit'])->name("productos.edit");
 
 Route::post('/productos/categoria/add', [ProductosController::class, 'addCategory']);
 

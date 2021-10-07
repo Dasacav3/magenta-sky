@@ -73,11 +73,39 @@ class ProductosController extends Controller
 
     public function get(Producto $producto)
     {
-        return view('admin.product-edit', ['producto' => $producto]);
+        $categorias['categorias'] = CategoriaProducto::paginate(200);
+        $categorias['opciones'] = OpcionesProducto::paginate(200);
+        return view('admin.product-edit', ['producto' => $producto], $categorias);
     }
 
-    public function edit(Request $request){
-        $request->all();
+    public function edit(Request $request, Producto $producto)
+    {
+
+        if ($request->photo_product != null) {
+            $now = new \DateTime();
+            $name_photo = $now->getTimestamp() . "-" . $request->file('photo_product')->getClientOriginalName();
+            $url = "/img/products_img/" . $name_photo;
+            $ruta = public_path() . $url;
+
+            Image::make($request->file('photo_product')->getRealPath())->resize(600, 600, function ($constraint) {
+                $constraint->aspectRatio();
+                $constraint->upsize();
+            })->save($ruta);
+
+            $producto->imagen = $name_photo;
+        }
+
+        $producto->id = $request->id_product;
+        $producto->nombre = $request->name_product;
+        $producto->precio = $request->price_product;
+        $producto->cantidad = $request->cant_product;
+        $producto->sku = $request->sku_product;
+        $producto->stock = $request->stock_product;
+        $producto->descripcionCorta = $request->short_des;
+        $producto->descripcionLarga = $request->long_des;
+        $producto->save();
+
+        return redirect()->route('producto.show', $producto);
     }
 
     public function addCategory(Request $request)
