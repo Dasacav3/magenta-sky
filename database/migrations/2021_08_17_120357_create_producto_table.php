@@ -25,6 +25,7 @@ class CreateProductoTable extends Migration
             $table->string('descripcionCorta', 255);
             $table->text('descripcionLarga');
             $table->text('imagen');
+            $table->enum('estado_stock', ['Disponible', 'Agotado', 'Pedido realizado'])->default('Disponible');
         });
     }
 
