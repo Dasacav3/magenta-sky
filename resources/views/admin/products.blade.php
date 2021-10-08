@@ -51,15 +51,15 @@
                         <textarea class="border border-black resize-none" rows="10" cols="10"
                             name="descripcionLarga"></textarea>
                         <label>Categorias</label>
-                        <div id="categorias" class="flex">
+                        <div id="categorias" class="flex flex-col items-start">
                             @foreach ($categorias as $item)
                                 <label class="pr-2 capitalize"><input type="checkbox" value="{{ $item->id }}"
                                         name="categorias[]">
-                                    {{ $item->nombreCategoria }}</label><br>
+                                    {{ $item->nombreCategoria }}</label>
                             @endforeach
                         </div>
-                        <input type="text" class="border border-black" placeholder="Escribe para añadir una categoria"
-                            name="nuevaCategoria">
+                        <input id="iptNuevaCategoria" name="iptNuevaCategoria" type="text" class="border border-black"
+                            placeholder="Escribe para añadir una categoria" name="nuevaCategoria">
                         <button id="btnNuevaCategoria" class="bg-red-400 text-white w-max px-3 self-center my-3">Nueva
                             categoria</button>
                         <label>Opciones producto</label>
@@ -71,7 +71,7 @@
                             @endforeach
                         </select>
                         <label>Imagen</label>
-                        <input type="file" name="fotoProducto" class="border border-black" accept="image/*">
+                        <input type="file" name="fotoProducto" class="border border-black" accept="image/*" required>
                         <!-- Buttons -->
                         <div class="text-right space-x-5 mt-5 flex justify-center items-center">
                             <button @click="showModal = !showModal"

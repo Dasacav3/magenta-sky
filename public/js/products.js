@@ -55,10 +55,60 @@ window.addEventListener("DOMContentLoaded", () => {
                 data: null,
                 render: function (data, type, row, meta) {
                     return (
-                        "<button><a href='/admin/productos/"+data+"'><i class='fas fa-edit'></i></a></button>"
+                        "<button><a href='/admin/productos/" +
+                        data +
+                        "'><i class='fas fa-edit'></i></a></button>"
                     );
                 },
             },
         ],
     });
+
+    let btnAddNewCategory = document.getElementById("btnNuevaCategoria");
+    let formProducto = document.getElementById("formProducto");
+    if (btnAddNewCategory) {
+        btnAddNewCategory.addEventListener("click", (e) => {
+            e.preventDefault();
+            let _token = document.getElementsByName("_token")[0].value;
+
+            fetch("/admin/productos/categoria/add", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                    Accept: "application/json",
+                    "X-Requested-With": "XMLHttpRequest",
+                    "X-CSRF-Token": _token,
+                },
+                credentials: "same-origin",
+                body: JSON.stringify(formProducto.iptNuevaCategoria.value),
+            })
+                .then((req) => req.text())
+                .then((res) => {
+                    const Toast = Swal.mixin({
+                        toast: true,
+                        position: "top-end",
+                        showConfirmButton: false,
+                        timer: 3000,
+                        timerProgressBar: true,
+                        didOpen: (toast) => {
+                            toast.addEventListener(
+                                "mouseenter",
+                                Swal.stopTimer
+                            );
+                            toast.addEventListener(
+                                "mouseleave",
+                                Swal.resumeTimer
+                            );
+                        },
+                    });
+
+                    Toast.fire({
+                        icon: "success",
+                        title: "Categoria añadida",
+                    });
+
+                    location.reload();
+                });
+        });
+    }
 });

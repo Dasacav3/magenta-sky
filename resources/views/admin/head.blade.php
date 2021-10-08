@@ -23,6 +23,7 @@
     <link rel="stylesheet" href="/lib/datatables/Responsive-2.2.9/css/responsive.bootstrap.min.css">
     <script src="/lib/datatables/Responsive-2.2.9/js/dataTables.responsive.min.js"></script>
     {{-- SweetAlert2 --}}
+    <script src="/lib/sweetalert2/dist/sweetalert2.all.min.js"></script>
     <link rel="stylesheet" href="/lib/sweetalert2/dist/sweetalert2.min.css">
     {{-- Alpine.js --}}
     <script defer src="https://unpkg.com/alpinejs@3.2.3/dist/cdn.min.js"></script>

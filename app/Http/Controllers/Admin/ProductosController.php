@@ -108,10 +108,10 @@ class ProductosController extends Controller
         return redirect()->route('producto.show', $producto);
     }
 
-    public function addCategory(Request $request)
+    public function addCategory(Request $request, Producto $producto)
     {
         $categoria = new CategoriaProducto();
-        $categoria->nombreCategoria = $request->nuevaCategoria;
+        $categoria->nombreCategoria = $request[0];
         $categoria->save();
     }
 
