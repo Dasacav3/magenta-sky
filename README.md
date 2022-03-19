@@ -4,11 +4,11 @@
 Magenta Sky Online Store
 </h1>
 
-## Acerca de Magenta Sky Store
+## About Magenta Sky Store
 
-Magenta Sky Store es el prototipo de tienda online creado a partir de la necesidad de poder administrar la venta de productos de la empresa Magenta Sky.
+Magenta Sky Store is the online store prototype created from the need to be able to manage the sale of Magenta Sky company products.
 
-## Tecnologias usadas
+## Used technology
 
 - Laravel v8^
 - UI v3^
